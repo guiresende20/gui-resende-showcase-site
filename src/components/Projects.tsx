@@ -49,8 +49,8 @@ const Projects = () => {
       type: "Editorial"
     },
     {
-      title: "Preservação de Patrimônio em RA",
-      description: "Pesquisas e publicações sobre uso de realidade aumentada para preservação e divulgação do patrimônio cultural.",
+      title: "Digitalização 3D: Preservação de Patrimônio",
+      description: "Pesquisas e publicações sobre uso da digitalização 3D para preservação e divulgação do patrimônio cultural.",
       image: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=400&h=250&fit=crop",
       technologies: ["AR", "Patrimônio Cultural", "Preservação", "Research"],
       type: "Pesquisa",
