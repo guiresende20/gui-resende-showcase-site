@@ -30,7 +30,7 @@ const Experience = () => {
       period: "2018 - 2022",
       description: [
         "Cursos de Publicidade, Design, Jornalismo e Administração",
-        "Disciplinas: Cibercultura, Apps, Design Editorial",
+        "Disciplinas: Cibercultura, Mobilidade & Apps, Design Editorial, Design Digital, Consumo e entretenimento digital, Webdesign, Projeto IV Inovação Social, Desenho Digital",
         "Capacitação de estudantes em tecnologias emergentes"
       ]
     },
