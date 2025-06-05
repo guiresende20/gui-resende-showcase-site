@@ -49,7 +49,7 @@ const Experience = () => {
       company: "Anglo Vestibulares",
       period: "2012-2013 / 2008",
       description: [
-        "Desenvolvimento do novo site do curso"
+         "Desenvolvimento do novo site do curso",
         "Reestruturação da comunicação institucional",
         "Desenvolvimento de ações promocionais",
         "Análise de mercado e estratégias competitivas"
