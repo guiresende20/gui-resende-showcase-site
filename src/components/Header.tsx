@@ -1,10 +1,13 @@
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
+import { useLanguage } from '../hooks/useLanguage';
+import { Button } from '@/components/ui/button';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,12 +25,16 @@ const Header = () => {
     setIsMenuOpen(false);
   };
 
+  const toggleLanguage = () => {
+    setLanguage(language === 'pt' ? 'en' : 'pt');
+  };
+
   const menuItems = [
-    { label: 'Início', id: 'hero' },
-    { label: 'Sobre', id: 'about' },
-    { label: 'Experiência', id: 'experience' },
-    { label: 'Projetos', id: 'projects' },
-    { label: 'Contato', id: 'contact' },
+    { label: t('nav.home'), id: 'hero' },
+    { label: t('nav.about'), id: 'about' },
+    { label: t('nav.experience'), id: 'experience' },
+    { label: t('nav.projects'), id: 'projects' },
+    { label: t('nav.contact'), id: 'contact' },
   ];
 
   return (
@@ -46,7 +53,7 @@ const Header = () => {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             {menuItems.map((item) => (
               <button
                 key={item.id}
@@ -56,6 +63,17 @@ const Header = () => {
                 {item.label}
               </button>
             ))}
+            
+            {/* Language Toggle */}
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={toggleLanguage}
+              className="flex items-center gap-2 border-slate-300 hover:border-blue-900 hover:text-blue-900"
+            >
+              <Globe size={16} />
+              {language.toUpperCase()}
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -80,6 +98,17 @@ const Header = () => {
                   {item.label}
                 </button>
               ))}
+              
+              {/* Mobile Language Toggle */}
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={toggleLanguage}
+                className="mx-4 mt-2 flex items-center gap-2 justify-center border-slate-300 hover:border-blue-900 hover:text-blue-900"
+              >
+                <Globe size={16} />
+                {language.toUpperCase()}
+              </Button>
             </div>
           </div>
         )}

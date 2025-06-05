@@ -1,10 +1,12 @@
-
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, FileText } from 'lucide-react';
+import { useLanguage } from '../hooks/useLanguage';
 
 const Projects = () => {
+  const { t } = useLanguage();
+  
   const projects = [
     {
       title: "MuseuVR",
@@ -64,10 +66,10 @@ const Projects = () => {
     <section id="projects" className="py-20 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-slate-800 mb-4">Projetos & Publicações</h2>
+          <h2 className="text-4xl font-bold text-slate-800 mb-4">{t('projects.title')}</h2>
           <div className="w-24 h-1 bg-blue-900 mx-auto mb-6"></div>
           <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-            Seleção de projetos que demonstram minha expertise em design, tecnologia e inovação.
+            {t('projects.description')}
           </p>
         </div>
 
@@ -113,7 +115,7 @@ const Projects = () => {
                 <div className="flex gap-3">
                   <Button variant="outline" size="sm" className="flex items-center gap-2">
                     <FileText size={16} />
-                    Saiba Mais
+                    {t('projects.learnMore')}
                   </Button>
                 </div>
               </CardContent>
@@ -126,7 +128,7 @@ const Projects = () => {
           <Card className="border-2 border-blue-200 bg-blue-50">
             <CardHeader>
               <CardTitle className="text-2xl font-semibold text-slate-800 flex items-center gap-2">
-                🏆 Patente Registrada
+                🏆 {t('projects.patent')}
               </CardTitle>
               <CardDescription className="text-lg text-slate-700">
                 <strong>Sistema e método de produção de assentos personalizáveis</strong>

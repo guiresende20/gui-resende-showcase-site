@@ -1,8 +1,11 @@
 
 import React from 'react';
 import { Linkedin, Mail, MessageSquare, ExternalLink } from 'lucide-react';
+import { useLanguage } from '../hooks/useLanguage';
 
 const Footer = () => {
+  const { t } = useLanguage();
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -11,11 +14,11 @@ const Footer = () => {
   };
 
   const quickLinks = [
-    { label: 'Início', id: 'hero' },
-    { label: 'Sobre', id: 'about' },
-    { label: 'Experiência', id: 'experience' },
-    { label: 'Projetos', id: 'projects' },
-    { label: 'Contato', id: 'contact' },
+    { label: t('nav.home'), id: 'hero' },
+    { label: t('nav.about'), id: 'about' },
+    { label: t('nav.experience'), id: 'experience' },
+    { label: t('nav.projects'), id: 'projects' },
+    { label: t('nav.contact'), id: 'contact' },
   ];
 
   return (
@@ -26,9 +29,9 @@ const Footer = () => {
           <div>
             <h3 className="text-2xl font-bold mb-4">Guilherme Resende Muniz</h3>
             <p className="text-slate-300 mb-4 leading-relaxed">
-              Designer de Inovação | UX/UI | IA | VR/AR
+              {t('footer.description')}
               <br />
-              Pesquisador e inovador criando experiências digitais que fazem a diferença.
+              {t('footer.bio')}
             </p>
             <div className="flex space-x-4">
               <a 
@@ -66,7 +69,7 @@ const Footer = () => {
 
           {/* Links Rápidos */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Links Rápidos</h4>
+            <h4 className="text-lg font-semibold mb-4">{t('footer.quickLinks')}</h4>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.id}>
@@ -83,7 +86,7 @@ const Footer = () => {
 
           {/* Contato */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Contato</h4>
+            <h4 className="text-lg font-semibold mb-4">{t('footer.contact')}</h4>
             <div className="space-y-2 text-slate-300">
               <p>Porto Alegre - RS, Brasil</p>
               <p>guiresende20@gmail.com</p>
@@ -94,7 +97,7 @@ const Footer = () => {
 
         <div className="border-t border-slate-700 mt-8 pt-8 text-center">
           <p className="text-slate-400">
-            © 2025 Guilherme Resende Muniz – Todos os direitos reservados.
+            {t('footer.copyright')}
           </p>
         </div>
       </div>

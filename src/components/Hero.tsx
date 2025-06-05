@@ -2,8 +2,11 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Linkedin, Mail, MessageSquare, ExternalLink } from 'lucide-react';
+import { useLanguage } from '../hooks/useLanguage';
 
 const Hero = () => {
+  const { t } = useLanguage();
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -21,15 +24,13 @@ const Hero = () => {
               <span className="block text-blue-900">Resende Muniz</span>
             </h1>
             <h2 className="text-xl lg:text-2xl text-slate-600 mb-4 font-medium">
-              Designer de Inovação | UX/UI | IA | VR/AR
+              {t('hero.subtitle')}
             </h2>
             <p className="text-lg text-slate-500 mb-6">
-              📍 Porto Alegre - RS, Brasil
+              {t('hero.location')}
             </p>
             <p className="text-lg text-slate-600 mb-8 leading-relaxed max-w-2xl">
-              Designer e pesquisador com mestrado em Design e Tecnologia. Atuo no CriaLab - Tecnopuc 
-              com projetos de UX/UI, IA e tecnologias imersivas (VR/AR), desenvolvendo soluções estratégicas 
-              para empresas como HP e órgãos públicos.
+              {t('hero.description')}
             </p>
             
             {/* Links sociais */}
@@ -73,14 +74,14 @@ const Hero = () => {
                 onClick={() => scrollToSection('projects')}
                 className="bg-blue-900 hover:bg-blue-800 text-white px-8 py-3 text-lg"
               >
-                Ver Projetos
+                {t('hero.viewProjects')}
               </Button>
               <Button 
                 variant="outline"
                 onClick={() => scrollToSection('contact')}
                 className="border-blue-900 text-blue-900 hover:bg-blue-50 px-8 py-3 text-lg"
               >
-                Entre em Contato
+                {t('hero.contact')}
               </Button>
             </div>
           </div>
