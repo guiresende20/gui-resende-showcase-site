@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -13,28 +14,32 @@ const Projects = () => {
       description: "Projeto de doutorado focado em interação natural em ambientes virtuais culturais, desenvolvendo novas formas de experiência imersiva em museus.",
       image: "https://images.unsplash.com/photo-1617802690992-15d93263d3a9?w=400&h=250&fit=crop",
       technologies: ["Unity", "VR", "C#", "Interação Natural"],
-      type: "Pesquisa"
+      type: "Pesquisa",
+      link: "https://youtu.be/JV1fSU26OI8"
     },
     {
       title: "Semear AgroHUB",
       description: "Desenvolvimento de estratégia, UX e governança para hub de inovação no agronegócio, conectando produtores com tecnologias sustentáveis.",
       image: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=400&h=250&fit=crop",
       technologies: ["UX Strategy", "Service Design", "Governança", "Inovação"],
-      type: "Profissional"
+      type: "Profissional",
+      link: "https://acrobat.adobe.com/link/review?uri=urn:aaid:scds:US:4887118c-3eca-3a20-ba15-09492d48bd71"
     },
     {
       title: "Projeto Aula 360º",
       description: "Iniciativa educacional utilizando tecnologias imersivas para criar experiências de aprendizado em realidade virtual.",
       image: "https://images.unsplash.com/photo-1588702547923-7295ca1db36e?w=400&h=250&fit=crop",
       technologies: ["VR", "Educação", "Unity", "Design Educacional"],
-      type: "Educacional"
+      type: "Educacional",
+      link: "https://www.researchgate.net/profile/Guilherme-Resende-2/publication/269163432_360_Lessons_design_and_education/links/5ba8f378a6fdccd3cb6f71b4/360-Lessons-design-and-education.pdf"
     },
     {
       title: "Avaliação app Mobiteste",
       description: "Pesquisa e avaliação de usabilidade do aplicativo educacional Mobiteste, com foco na experiência do usuário estudante.",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop",
       technologies: ["UX Research", "Usabilidade", "Mobile UX", "Educação"],
-      type: "Pesquisa"
+      type: "Pesquisa",
+      link: "https://lume.ufrgs.br/handle/10183/159288"
     },
     {
       title: "Ebook Leituras Obrigatórias UFRGS",
@@ -48,7 +53,8 @@ const Projects = () => {
       description: "Pesquisas e publicações sobre uso de realidade aumentada para preservação e divulgação do patrimônio cultural.",
       image: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=400&h=250&fit=crop",
       technologies: ["AR", "Patrimônio Cultural", "Preservação", "Research"],
-      type: "Pesquisa"
+      type: "Pesquisa",
+      link: "https://www.ufrgs.br/ldsm/3d/"
     }
   ];
 
@@ -113,10 +119,22 @@ const Projects = () => {
                   </div>
                 </div>
                 <div className="flex gap-3">
-                  <Button variant="outline" size="sm" className="flex items-center gap-2">
-                    <FileText size={16} />
-                    {t('projects.learnMore')}
-                  </Button>
+                  {project.link ? (
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      className="flex items-center gap-2"
+                      onClick={() => window.open(project.link, '_blank')}
+                    >
+                      <FileText size={16} />
+                      {t('projects.learnMore')}
+                    </Button>
+                  ) : (
+                    <Button variant="outline" size="sm" className="flex items-center gap-2" disabled>
+                      <FileText size={16} />
+                      {t('projects.learnMore')}
+                    </Button>
+                  )}
                 </div>
               </CardContent>
             </Card>

@@ -87,10 +87,12 @@ const Hero = () => {
           </div>
           
           <div className="lg:w-1/2 flex justify-center">
-            <div className="w-80 h-80 bg-gradient-to-br from-blue-200 to-blue-300 rounded-full flex items-center justify-center shadow-xl">
-              <div className="w-72 h-72 bg-slate-200 rounded-full flex items-center justify-center">
-                <span className="text-slate-500 text-lg font-medium">Foto de Perfil</span>
-              </div>
+            <div className="w-80 h-80 bg-gradient-to-br from-blue-200 to-blue-300 rounded-full flex items-center justify-center shadow-xl overflow-hidden">
+              <img 
+                src="/lovable-uploads/12608115-5850-49cd-a918-f853b0ba2573.png" 
+                alt="Guilherme Resende Muniz"
+                className="w-72 h-72 rounded-full object-cover"
+              />
             </div>
           </div>
         </div>
