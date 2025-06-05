@@ -8,7 +8,7 @@ const About = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-slate-800 mb-4">Sobre Mim</h2>
-          <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
+          <div className="w-24 h-1 bg-blue-900 mx-auto"></div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -17,17 +17,17 @@ const About = () => {
               Trajetória Acadêmica e Profissional
             </h3>
             <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-              Possuo Mestrado em Design e Tecnologia pela UFRGS e graduação em Comunicação Social, 
-              combinando uma sólida base teórica com experiência prática em design de interfaces e inovação tecnológica.
+              Designer e pesquisador com mestrado em Design e Tecnologia e graduação em Comunicação Social pela UFRGS. 
+              Atuo no CriaLab - Tecnopuc com projetos de UX/UI, IA e tecnologias imersivas (VR/AR), desenvolvendo 
+              soluções estratégicas para empresas como a HP e órgãos públicos (ex.: Semear Agrohub).
             </p>
             <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-              Minha expertise abrange UX/UI Design, Realidade Virtual e Aumentada, Inteligência Artificial em interfaces, 
-              design de serviços e metodologias de design thinking. Tenho paixão por criar experiências digitais 
-              que realmente fazem a diferença na vida das pessoas.
+              Tenho experiência prática em prototipagem rápida, impressão 3D e facilitação de workshops. 
+              Sou entusiasta da tecnologia e utilizo IA para análises estratégicas, geração de insights e design de serviços.
             </p>
             <p className="text-lg text-slate-600 leading-relaxed">
-              Atuo na intersecção entre pesquisa acadêmica e aplicação prática, sempre buscando soluções inovadoras 
-              e centradas no usuário para problemas complexos.
+              Minha trajetória inclui passagens pela ESPM como professor, pelo marketing do Anglo Vestibulares 
+              e pela startup BSMotion, sempre na intersecção entre tecnologia, design e inovação.
             </p>
           </div>
 
@@ -36,12 +36,12 @@ const About = () => {
               <CardContent className="p-0">
                 <div className="flex items-center mb-4">
                   <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                    <span className="text-blue-600 text-xl font-bold">UX</span>
+                    <span className="text-blue-900 text-xl font-bold">UX</span>
                   </div>
                   <h4 className="text-xl font-semibold text-slate-800">UX/UI Design</h4>
                 </div>
                 <p className="text-slate-600">
-                  Criação de interfaces intuitivas e experiências centradas no usuário.
+                  Desenvolvimento de soluções estratégicas e interfaces centradas no usuário.
                 </p>
               </CardContent>
             </Card>
@@ -55,7 +55,7 @@ const About = () => {
                   <h4 className="text-xl font-semibold text-slate-800">VR/AR</h4>
                 </div>
                 <p className="text-slate-600">
-                  Desenvolvimento de experiências imersivas em realidade virtual e aumentada.
+                  Pesquisa e desenvolvimento em tecnologias imersivas e interação natural.
                 </p>
               </CardContent>
             </Card>
@@ -66,10 +66,10 @@ const About = () => {
                   <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
                     <span className="text-green-600 text-xl font-bold">AI</span>
                   </div>
-                  <h4 className="text-xl font-semibold text-slate-800">IA em Interfaces</h4>
+                  <h4 className="text-xl font-semibold text-slate-800">IA em Design</h4>
                 </div>
                 <p className="text-slate-600">
-                  Integração de inteligência artificial para criar interfaces mais inteligentes.
+                  Utilização de IA para análises estratégicas e geração de insights.
                 </p>
               </CardContent>
             </Card>

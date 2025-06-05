@@ -2,56 +2,76 @@
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, FileText } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
     {
-      title: "Semear AgroHUB",
-      description: "Plataforma digital para conectar produtores rurais com tecnologias sustentáveis e práticas inovadoras.",
-      image: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=400&h=250&fit=crop",
-      technologies: ["React", "Node.js", "MongoDB", "UX Research"],
-      demoLink: "#",
-      githubLink: "#"
-    },
-    {
       title: "MuseuVR",
-      description: "Experiência de realidade virtual para visitação virtual de museus, criando imersão total para o usuário.",
+      description: "Projeto de doutorado focado em interação natural em ambientes virtuais culturais, desenvolvendo novas formas de experiência imersiva em museus.",
       image: "https://images.unsplash.com/photo-1617802690992-15d93263d3a9?w=400&h=250&fit=crop",
-      technologies: ["Unity3D", "C#", "VR", "Blender"],
-      demoLink: "#",
-      githubLink: "#"
+      technologies: ["Unity", "VR", "C#", "Interação Natural"],
+      type: "Pesquisa"
     },
     {
-      title: "AI Interface Designer",
-      description: "Ferramenta de design assistida por IA que ajuda designers a criar interfaces mais eficientes e acessíveis.",
-      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=250&fit=crop",
-      technologies: ["React", "TensorFlow", "Python", "Figma API"],
-      demoLink: "#",
-      githubLink: "#"
+      title: "Semear AgroHUB",
+      description: "Desenvolvimento de estratégia, UX e governança para hub de inovação no agronegócio, conectando produtores com tecnologias sustentáveis.",
+      image: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=400&h=250&fit=crop",
+      technologies: ["UX Strategy", "Service Design", "Governança", "Inovação"],
+      type: "Profissional"
     },
     {
-      title: "EcoService Design",
-      description: "Sistema de design de serviços sustentáveis com metodologias centradas no usuário e impacto ambiental.",
-      image: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=400&h=250&fit=crop",
-      technologies: ["Service Design", "Design Thinking", "Sustainability", "User Research"],
-      demoLink: "#",
-      githubLink: "#"
+      title: "Projeto Aula 360º",
+      description: "Iniciativa educacional utilizando tecnologias imersivas para criar experiências de aprendizado em realidade virtual.",
+      image: "https://images.unsplash.com/photo-1588702547923-7295ca1db36e?w=400&h=250&fit=crop",
+      technologies: ["VR", "Educação", "Unity", "Design Educacional"],
+      type: "Educacional"
+    },
+    {
+      title: "Avaliação app Mobiteste",
+      description: "Pesquisa e avaliação de usabilidade do aplicativo educacional Mobiteste, com foco na experiência do usuário estudante.",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop",
+      technologies: ["UX Research", "Usabilidade", "Mobile UX", "Educação"],
+      type: "Pesquisa"
+    },
+    {
+      title: "Ebook Leituras Obrigatórias UFRGS",
+      description: "Desenvolvimento de material educacional digital para auxiliar estudantes nas leituras obrigatórias do vestibular.",
+      image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=250&fit=crop",
+      technologies: ["Design Editorial", "UX", "Educação", "Digital Publishing"],
+      type: "Editorial"
+    },
+    {
+      title: "Preservação de Patrimônio em RA",
+      description: "Pesquisas e publicações sobre uso de realidade aumentada para preservação e divulgação do patrimônio cultural.",
+      image: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=400&h=250&fit=crop",
+      technologies: ["AR", "Patrimônio Cultural", "Preservação", "Research"],
+      type: "Pesquisa"
     }
   ];
 
+  const getTypeColor = (type: string) => {
+    switch (type) {
+      case 'Pesquisa': return 'bg-blue-100 text-blue-800';
+      case 'Profissional': return 'bg-green-100 text-green-800';
+      case 'Educacional': return 'bg-purple-100 text-purple-800';
+      case 'Editorial': return 'bg-orange-100 text-orange-800';
+      default: return 'bg-gray-100 text-gray-800';
+    }
+  };
+
   return (
-    <section id="projects" className="py-20 bg-white">
+    <section id="projects" className="py-20 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-slate-800 mb-4">Projetos & Prêmios</h2>
-          <div className="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
+          <h2 className="text-4xl font-bold text-slate-800 mb-4">Projetos & Publicações</h2>
+          <div className="w-24 h-1 bg-blue-900 mx-auto mb-6"></div>
           <p className="text-lg text-slate-600 max-w-3xl mx-auto">
             Seleção de projetos que demonstram minha expertise em design, tecnologia e inovação.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <Card 
               key={index} 
@@ -65,9 +85,14 @@ const Projects = () => {
                 />
               </div>
               <CardHeader>
-                <CardTitle className="text-xl font-semibold text-slate-800">
-                  {project.title}
-                </CardTitle>
+                <div className="flex items-center justify-between mb-2">
+                  <CardTitle className="text-xl font-semibold text-slate-800">
+                    {project.title}
+                  </CardTitle>
+                  <span className={`px-2 py-1 text-xs rounded-full font-medium ${getTypeColor(project.type)}`}>
+                    {project.type}
+                  </span>
+                </div>
                 <CardDescription className="text-slate-600 leading-relaxed">
                   {project.description}
                 </CardDescription>
@@ -78,7 +103,7 @@ const Projects = () => {
                     {project.technologies.map((tech, idx) => (
                       <span 
                         key={idx}
-                        className="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full font-medium"
+                        className="px-3 py-1 bg-blue-100 text-blue-900 text-sm rounded-full font-medium"
                       >
                         {tech}
                       </span>
@@ -87,17 +112,29 @@ const Projects = () => {
                 </div>
                 <div className="flex gap-3">
                   <Button variant="outline" size="sm" className="flex items-center gap-2">
-                    <ExternalLink size={16} />
-                    Ver Demo
-                  </Button>
-                  <Button variant="outline" size="sm" className="flex items-center gap-2">
-                    <Github size={16} />
-                    Código
+                    <FileText size={16} />
+                    Saiba Mais
                   </Button>
                 </div>
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        {/* Patente */}
+        <div className="mt-12">
+          <Card className="border-2 border-blue-200 bg-blue-50">
+            <CardHeader>
+              <CardTitle className="text-2xl font-semibold text-slate-800 flex items-center gap-2">
+                🏆 Patente Registrada
+              </CardTitle>
+              <CardDescription className="text-lg text-slate-700">
+                <strong>Sistema e método de produção de assentos personalizáveis</strong>
+                <br />
+                Inovação tecnológica registrada com aplicação industrial.
+              </CardDescription>
+            </CardHeader>
+          </Card>
         </div>
       </div>
     </section>

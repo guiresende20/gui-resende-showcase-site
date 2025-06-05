@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Mail, MessageSquare, MapPin, Linkedin, Github } from 'lucide-react';
+import { Mail, MessageSquare, MapPin, Linkedin, ExternalLink } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
 
 const Contact = () => {
@@ -37,7 +37,7 @@ const Contact = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-slate-800 mb-4">Entre em Contato</h2>
-          <div className="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
+          <div className="w-24 h-1 bg-blue-900 mx-auto mb-6"></div>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Vamos conversar sobre seu próximo projeto? Estou sempre aberto a novas oportunidades e colaborações.
           </p>
@@ -50,17 +50,17 @@ const Contact = () => {
               <CardContent className="p-6">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                    <Mail className="text-blue-600" size={24} />
+                    <Mail className="text-blue-900" size={24} />
                   </div>
                   <div>
                     <h3 className="font-semibold text-slate-800">E-mail</h3>
-                    <p className="text-slate-600">guilherme@exemplo.com</p>
+                    <p className="text-slate-600">guiresende20@gmail.com</p>
                   </div>
                 </div>
                 <Button 
                   variant="outline" 
                   className="w-full"
-                  onClick={() => window.open('mailto:guilherme@exemplo.com')}
+                  onClick={() => window.open('mailto:guiresende20@gmail.com')}
                 >
                   Enviar E-mail
                 </Button>
@@ -75,13 +75,13 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-slate-800">WhatsApp</h3>
-                    <p className="text-slate-600">+55 (11) 99999-9999</p>
+                    <p className="text-slate-600">+55 51 99792-5092</p>
                   </div>
                 </div>
                 <Button 
                   variant="outline" 
                   className="w-full"
-                  onClick={() => window.open('https://wa.me/5511999999999')}
+                  onClick={() => window.open('https://wa.me/5551997925092')}
                 >
                   Chamar no WhatsApp
                 </Button>
@@ -96,7 +96,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-slate-800">Localização</h3>
-                    <p className="text-slate-600">Porto Alegre, RS</p>
+                    <p className="text-slate-600">Porto Alegre - RS, Brasil</p>
                   </div>
                 </div>
               </CardContent>
@@ -108,7 +108,7 @@ const Contact = () => {
                 variant="outline"
                 size="icon"
                 className="w-12 h-12"
-                onClick={() => window.open('https://linkedin.com/in/guilhermeresende')}
+                onClick={() => window.open('https://www.linkedin.com/in/guilhermeresende')}
               >
                 <Linkedin size={20} />
               </Button>
@@ -116,9 +116,9 @@ const Contact = () => {
                 variant="outline"
                 size="icon"
                 className="w-12 h-12"
-                onClick={() => window.open('https://github.com/guilhermeresende')}
+                onClick={() => window.open('http://lattes.cnpq.br/5709726694301047')}
               >
-                <Github size={20} />
+                <ExternalLink size={20} />
               </Button>
             </div>
           </div>
@@ -179,7 +179,7 @@ const Contact = () => {
                   </div>
                   <Button 
                     type="submit" 
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 text-lg"
+                    className="w-full bg-blue-900 hover:bg-blue-800 text-white py-3 text-lg"
                   >
                     Enviar Mensagem
                   </Button>

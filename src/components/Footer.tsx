@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Linkedin, Github, Mail } from 'lucide-react';
+import { Linkedin, Mail, MessageSquare, ExternalLink } from 'lucide-react';
 
 const Footer = () => {
   const scrollToSection = (sectionId: string) => {
@@ -13,6 +13,7 @@ const Footer = () => {
   const quickLinks = [
     { label: 'Início', id: 'hero' },
     { label: 'Sobre', id: 'about' },
+    { label: 'Experiência', id: 'experience' },
     { label: 'Projetos', id: 'projects' },
     { label: 'Contato', id: 'contact' },
   ];
@@ -23,14 +24,15 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {/* Informações Pessoais */}
           <div>
-            <h3 className="text-2xl font-bold mb-4">Guilherme Resende</h3>
+            <h3 className="text-2xl font-bold mb-4">Guilherme Resende Muniz</h3>
             <p className="text-slate-300 mb-4 leading-relaxed">
-              Designer & Pesquisador em Inovação, especialista em UX/UI, VR/AR e IA. 
-              Criando experiências digitais que fazem a diferença.
+              Designer de Inovação | UX/UI | IA | VR/AR
+              <br />
+              Pesquisador e inovador criando experiências digitais que fazem a diferença.
             </p>
             <div className="flex space-x-4">
               <a 
-                href="https://linkedin.com/in/guilhermeresende" 
+                href="https://www.linkedin.com/in/guilhermeresende" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-slate-700 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors duration-200"
@@ -38,18 +40,26 @@ const Footer = () => {
                 <Linkedin size={20} />
               </a>
               <a 
-                href="https://github.com/guilhermeresende" 
+                href="http://lattes.cnpq.br/5709726694301047" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-slate-700 rounded-lg flex items-center justify-center hover:bg-slate-600 transition-colors duration-200"
               >
-                <Github size={20} />
+                <ExternalLink size={20} />
               </a>
               <a 
-                href="mailto:guilherme@exemplo.com"
+                href="mailto:guiresende20@gmail.com"
                 className="w-10 h-10 bg-slate-700 rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors duration-200"
               >
                 <Mail size={20} />
+              </a>
+              <a 
+                href="https://wa.me/5551997925092"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-slate-700 rounded-lg flex items-center justify-center hover:bg-green-500 transition-colors duration-200"
+              >
+                <MessageSquare size={20} />
               </a>
             </div>
           </div>
@@ -75,16 +85,16 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Contato</h4>
             <div className="space-y-2 text-slate-300">
-              <p>Porto Alegre, RS</p>
-              <p>guilherme@exemplo.com</p>
-              <p>+55 (11) 99999-9999</p>
+              <p>Porto Alegre - RS, Brasil</p>
+              <p>guiresende20@gmail.com</p>
+              <p>+55 51 99792-5092</p>
             </div>
           </div>
         </div>
 
         <div className="border-t border-slate-700 mt-8 pt-8 text-center">
           <p className="text-slate-400">
-            © 2025 Guilherme Resende Muniz. Todos os direitos reservados.
+            © 2025 Guilherme Resende Muniz – Todos os direitos reservados.
           </p>
         </div>
       </div>
