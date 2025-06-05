@@ -50,7 +50,7 @@ const Projects = () => {
     },
     {
       title: "Digitalização 3D: Preservação de Patrimônio",
-      description: "Pesquisas e publicações sobre uso da digitalização 3D para preservação e divulgação do patrimônio cultural.",
+      description: "Desenvolvimento de repositório 3D de digitalizações de prédios históricos votaldo para preservação e divulgação do patrimônio cultural. O projeto foi um dos resultados do meu mestrado",
       image: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=400&h=250&fit=crop",
       technologies: ["AR", "Patrimônio Cultural", "Preservação", "Research"],
       type: "Pesquisa",
