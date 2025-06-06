@@ -1,12 +1,19 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, FileText } from 'lucide-react';
 import { useLanguage } from '../hooks/useLanguage';
+import { Modal } from '@/components/ui/modal';
 
 const Projects = () => {
   const { t } = useLanguage();
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState<{ title: string; iframe?: string; link?: string }>({
+    title: '',
+    iframe: '',
+    link: ''
+  });
   
   const projects = [
     {
@@ -28,10 +35,10 @@ const Projects = () => {
     {
       title: "Projeto Aula 360º",
       description: "Iniciativa educacional utilizando tecnologias imersivas para criar experiências de aprendizado em realidade virtual.",
-      image: "https://images.unsplash.com/photo-1588702547923-7295ca1db36e?w=400&h=250&fit=crop",
+      image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=400&h=250&fit=crop",
       technologies: ["VR", "Educação", "Unity", "Design Educacional"],
       type: "Educacional",
-      link: "https://www.researchgate.net/profile/Guilherme-Resende-2/publication/269163432_360_Lessons_design_and_education/links/5ba8f378a6fdccd3cb6f71b4/360-Lessons-design-and-education.pdf"
+      iframe: "https://player.vimeo.com/video/53293573"
     },
     {
       title: "Avaliação app Mobiteste",
@@ -46,7 +53,8 @@ const Projects = () => {
       description: "Desenvolvimento de material educacional digital para auxiliar estudantes nas leituras obrigatórias do vestibular.",
       image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=250&fit=crop",
       technologies: ["Design Editorial", "UX", "Educação", "Digital Publishing"],
-      type: "Editorial"
+      type: "Editorial",
+      iframe: "https://player.vimeo.com/video/140704714?h=d93163f478"
     },
     {
       title: "Digitalização 3D: Preservação de Patrimônio",
@@ -65,6 +73,18 @@ const Projects = () => {
       case 'Educacional': return 'bg-purple-100 text-purple-800';
       case 'Editorial': return 'bg-orange-100 text-orange-800';
       default: return 'bg-gray-100 text-gray-800';
+    }
+  };
+
+  const handleLearnMore = (project: any) => {
+    if (project.iframe) {
+      setModalContent({
+        title: project.title,
+        iframe: project.iframe
+      });
+      setModalOpen(true);
+    } else if (project.link) {
+      window.open(project.link, '_blank');
     }
   };
 
@@ -119,12 +139,12 @@ const Projects = () => {
                   </div>
                 </div>
                 <div className="flex gap-3">
-                  {project.link ? (
+                  {(project.link || project.iframe) ? (
                     <Button 
                       variant="outline" 
                       size="sm" 
                       className="flex items-center gap-2"
-                      onClick={() => window.open(project.link, '_blank')}
+                      onClick={() => handleLearnMore(project)}
                     >
                       <FileText size={16} />
                       {t('projects.learnMore')}
@@ -157,6 +177,23 @@ const Projects = () => {
           </Card>
         </div>
       </div>
+
+      <Modal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        title={modalContent.title}
+      >
+        {modalContent.iframe && (
+          <iframe
+            src={modalContent.iframe}
+            width="100%"
+            height="400"
+            frameBorder="0"
+            allowFullScreen
+            className="rounded"
+          />
+        )}
+      </Modal>
     </section>
   );
 };

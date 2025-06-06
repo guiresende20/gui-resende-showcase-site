@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import { GraduationCap, Award } from 'lucide-react';
+import { GraduationCap, Award, ExternalLink } from 'lucide-react';
 
 const Education = () => {
   const education = [
@@ -17,14 +17,30 @@ const Education = () => {
       institution: "Universidade Federal do Rio Grande do Sul (UFRGS)",
       period: "2013 - 2015",
       description: "Formação avançada em design e tecnologia com foco em inovação e metodologias de pesquisa.",
-      achievements: ["Dissertação aprovada", "Participação em congressos", "Pesquisa aplicada"]
+      achievements: [
+        "Dissertação aprovada", 
+        "Participação em congressos", 
+        "Pesquisa aplicada",
+        {
+          text: "Dissertação: O uso do design e das tecnologias 3D na criação do repositório digital de elementos de fachada dos prédios históricos da UFRGS",
+          link: "https://www.lume.ufrgs.br/handle/10183/143935"
+        }
+      ]
     },
     {
       degree: "Graduação em Comunicação Social - Publicidade",
       institution: "Universidade Federal do Rio Grande do Sul (UFRGS)",
       period: "2004 - 2010",
       description: "Formação em comunicação social com habilitação em publicidade e propaganda.",
-      achievements: ["Formação completa", "Projetos práticos", "Base sólida em comunicação"]
+      achievements: [
+        "Formação completa", 
+        "Projetos práticos", 
+        "Base sólida em comunicação",
+        {
+          text: "TCC: Do Napster ao Grooveshark: uma análise comparativa da evolução do compartilhamento de música na internet",
+          link: "https://bibliotecadigital.ufrgs.br/handle/10183/37592"
+        }
+      ]
     },
     {
       degree: "English for Business",
@@ -78,7 +94,21 @@ const Education = () => {
                     {edu.achievements.map((achievement, idx) => (
                       <li key={idx} className="flex items-start">
                         <span className="text-blue-900 mr-3 mt-1">•</span>
-                        <span className="text-slate-600">{achievement}</span>
+                        {typeof achievement === 'string' ? (
+                          <span className="text-slate-600">{achievement}</span>
+                        ) : (
+                          <span className="text-slate-600">
+                            <a 
+                              href={achievement.link} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="text-blue-600 hover:text-blue-800 underline inline-flex items-center gap-1"
+                            >
+                              {achievement.text}
+                              <ExternalLink size={14} />
+                            </a>
+                          </span>
+                        )}
                       </li>
                     ))}
                   </ul>

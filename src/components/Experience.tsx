@@ -30,8 +30,7 @@ const Experience = () => {
       period: "2018 - 2022",
       description: [
         "Cursos de Publicidade, Design, Jornalismo e Administração",
-        "Disciplinas: Cibercultura, Mobilidade & Apps, Design Editorial, Design Digital, Consumo e entretenimento digital, Webdesign, Projeto IV Inovação Social, Desenho Digital",
-        "Webdesign, Projeto IV Inovação Social, Desenho Digital"
+        "Disciplinas: Cibercultura, Mobilidade & Apps, Design Editorial, Design Digital, Consumo e entretenimento digital, Webdesign, Projeto IV Inovação Social, Desenho Digital, Mobilidade e Aplicativos, Inovação Social"
       ]
     },
     {
@@ -49,7 +48,7 @@ const Experience = () => {
       company: "Anglo Vestibulares",
       period: "2012-2013 / 2008",
       description: [
-        "Desenvolvimento do novo site do curso"
+        "Desenvolvimento do novo site do curso",
         "Reestruturação da comunicação institucional",
         "Desenvolvimento de ações promocionais",
         "Análise de mercado e estratégias competitivas"
