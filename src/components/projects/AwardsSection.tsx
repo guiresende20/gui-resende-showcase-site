@@ -10,8 +10,8 @@ const AwardsSection: React.FC = () => {
 
   const awards = [
     {
-      title: t('projects.awards.bordancini.title'),
-      description: t('projects.awards.bordancini.description'),
+      title: t('Prêmio Bornancini 2024'),
+      description: t('Categoria Design Digital - Realidade Aumentada e Realidades Extendidas'),
       link: 'https://drive.google.com/file/d/1ls8JBOotSEa8f7nBAFqPVHz0d7_P59E5/view?usp=drive_link'
     },
     {
