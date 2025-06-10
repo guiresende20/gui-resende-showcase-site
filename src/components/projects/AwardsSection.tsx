@@ -26,7 +26,7 @@ const AwardsSection: React.FC = () => {
       <Card className="border-2 border-amber-200 bg-amber-50">
         <CardHeader>
           <CardTitle className="text-2xl font-semibold text-slate-800 flex items-center gap-2">
-            🏆 {t('projects.awards')}
+            🏆 {t('Prêmios e Reconhecimentos')}
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
