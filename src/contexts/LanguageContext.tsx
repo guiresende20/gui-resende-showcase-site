@@ -29,8 +29,10 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   useEffect(() => {
     const loadTranslations = async () => {
       try {
+        console.log('Loading translations for language:', language);
         const translationModule = await import(`../translations/${language}.ts`);
         setTranslations(translationModule.default);
+        console.log('Translations loaded:', Object.keys(translationModule.default).length, 'keys');
       } catch (error) {
         console.error('Error loading translations:', error);
       }
@@ -41,7 +43,12 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   }, [language]);
 
   const t = (key: string): string => {
-    return translations[key] || key;
+    const translation = translations[key];
+    if (!translation) {
+      console.warn(`Missing translation for key: "${key}" in language: ${language}`);
+      return key;
+    }
+    return translation;
   };
 
   return (
