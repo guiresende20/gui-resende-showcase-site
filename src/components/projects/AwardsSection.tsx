@@ -15,8 +15,8 @@ const AwardsSection: React.FC = () => {
       link: 'https://drive.google.com/file/d/1ls8JBOotSEa8f7nBAFqPVHz0d7_P59E5/view?usp=drive_link'
     },
     {
-      title: t('projects.awards.jornalismo.title'),
-      description: t('projects.awards.jornalismo.description'),
+      title: t('39º PRÊMIO DIREITOS HUMANOS DE JORNALISMO 2022'),
+      description: t('Menção honrosa 39º PRÊMIO DIREITOS HUMANOS DE JORNALISMO 2022 - projeto Revista Ceos'),
       link: 'https://www.coletiva.net/noticias/gauchos-se-destacam-no-39-premio-direitos-humanos-de-jornalismo-,421812.jhtml'
     }
   ];
