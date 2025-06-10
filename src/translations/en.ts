@@ -30,6 +30,47 @@ export default {
 
   // Experience
   'experience.title': 'Professional Experience',
+  'experience.crialab.title': 'Designer and Innovation Researcher',
+  'experience.crialab.company': 'CriaLab - Tecnopuc',
+  'experience.crialab.period': '2021 - present',
+  'experience.crialab.description1': 'Development of UX/UI, AI and immersive technology (VR/AR) projects',
+  'experience.crialab.description2': 'Strategic solutions for companies like HP and public organizations',
+  'experience.crialab.description3': 'Rapid prototyping, 3D printing and workshop facilitation',
+
+  'experience.ufrgs.title': 'PhD Student and Researcher',
+  'experience.ufrgs.company': 'UFRGS - LdSM',
+  'experience.ufrgs.period': '2017 - present',
+  'experience.ufrgs.description1': 'Research in 3D digitization and virtual reality interaction',
+  'experience.ufrgs.description2': 'Development of the MuseuVR project',
+  'experience.ufrgs.description3': 'Scientific publications on heritage preservation in AR',
+
+  'experience.espm.title': 'Professor',
+  'experience.espm.company': 'ESPM',
+  'experience.espm.period': '2018 - 2022',
+  'experience.espm.description1': 'Courses in Advertising, Design, Journalism and Administration',
+  'experience.espm.description2': 'Subjects: Cyberculture, Mobility & Apps, Editorial Design, Digital Design, Digital consumption and entertainment, Web design, Innovation Project IV Social, Digital Drawing, Mobility and Applications, Social Innovation',
+
+  'experience.bsmotion.title': 'Head of Marketing',
+  'experience.bsmotion.company': 'BSMotion',
+  'experience.bsmotion.period': '2017',
+  'experience.bsmotion.description1': 'Development of VR solutions with integrated hardware and software',
+  'experience.bsmotion.description2': 'Marketing strategy for technology startup',
+  'experience.bsmotion.description3': 'Team management and customer relations',
+
+  'experience.anglo.title': 'Marketing Manager',
+  'experience.anglo.company': 'Anglo Vestibulares',
+  'experience.anglo.period': '2012-2013 / 2008',
+  'experience.anglo.description1': 'Development of the new course website',
+  'experience.anglo.description2': 'Restructuring of institutional communication',
+  'experience.anglo.description3': 'Development of promotional actions',
+  'experience.anglo.description4': 'Market analysis and competitive strategies',
+
+  'experience.campus.title': 'Account Executive and Curator',
+  'experience.campus.company': 'Campus Party Brasil',
+  'experience.campus.period': '2010-2011',
+  'experience.campus.description1': 'Curation of the games area',
+  'experience.campus.description2': 'Content planning and budget management',
+  'experience.campus.description3': 'Relationship with sponsors and partners',
 
   // Projects
   'projects.title': 'Projects & Publications',
@@ -37,9 +78,72 @@ export default {
   'projects.learnMore': 'Learn More',
   'projects.patent': 'Registered Patent',
 
+  'projects.museuvr.title': 'MuseuVR',
+  'projects.museuvr.description': 'PhD project focused on natural interaction in virtual cultural environments, developing new forms of immersive experience in museums.',
+
+  'projects.semear.title': 'Semear AgroHUB',
+  'projects.semear.description': 'Development of strategy, UX and governance for an innovation hub in agribusiness, connecting producers with sustainable technologies.',
+
+  'projects.aula360.title': 'Aula 360º Project',
+  'projects.aula360.description': 'Educational initiative using immersive technologies to create virtual reality learning experiences.',
+
+  'projects.mobiteste.title': 'Mobiteste App Evaluation',
+  'projects.mobiteste.description': 'Research and usability evaluation of the Mobiteste educational application, focusing on student user experience.',
+
+  'projects.ebook.title': 'UFRGS Required Readings Ebook',
+  'projects.ebook.description': 'Development of digital educational material to help students with required entrance exam readings.',
+
+  'projects.digitalizacao.title': '3D Digitization: Heritage Preservation',
+  'projects.digitalizacao.description': 'Development of 3D repository of digitizations of historic buildings aimed at preserving and disseminating cultural heritage. The project was one of the results of my master\'s degree.',
+
+  'projects.patent.title': 'System and method for producing customizable seats',
+  'projects.patent.description': 'Registered technological innovation with industrial application.',
+
   // Education
   'education.title': 'Academic Background',
   'education.highlights': 'Highlights',
+
+  'education.phd.degree': 'PhD in Design',
+  'education.phd.institution': 'Federal University of Rio Grande do Sul (UFRGS)',
+  'education.phd.period': '2017 - ongoing',
+  'education.phd.description': 'Research in 3D digitization and virtual reality interaction. Development of the MuseuVR project for natural interaction in virtual cultural environments.',
+  'education.phd.achievement1': 'CAPES Scholarship Holder',
+  'education.phd.achievement2': 'LdSM Researcher',
+  'education.phd.achievement3': 'International publications',
+
+  'education.master.degree': 'Master in Design and Technology',
+  'education.master.institution': 'Federal University of Rio Grande do Sul (UFRGS)',
+  'education.master.period': '2013 - 2015',
+  'education.master.description': 'Advanced training in design and technology with focus on innovation and research methodologies.',
+  'education.master.achievement1': 'Approved dissertation',
+  'education.master.achievement2': 'Participation in conferences',
+  'education.master.achievement3': 'Applied research',
+  'education.master.achievement4': 'Dissertation: The use of design and 3D technologies in creating the digital repository of facade elements of UFRGS historic buildings',
+
+  'education.bachelor.degree': 'Bachelor in Social Communication - Advertising',
+  'education.bachelor.institution': 'Federal University of Rio Grande do Sul (UFRGS)',
+  'education.bachelor.period': '2004 - 2010',
+  'education.bachelor.description': 'Training in social communication with specialization in advertising and propaganda.',
+  'education.bachelor.achievement1': 'Complete training',
+  'education.bachelor.achievement2': 'Practical projects',
+  'education.bachelor.achievement3': 'Solid foundation in communication',
+  'education.bachelor.achievement4': 'Thesis: From Napster to Grooveshark: a comparative analysis of the evolution of music sharing on the internet',
+
+  'education.english.degree': 'English for Business',
+  'education.english.institution': 'Leinster College - Ireland',
+  'education.english.period': '2009 - 2010',
+  'education.english.description': 'Business English course with cultural immersion in Ireland.',
+  'education.english.achievement1': 'International certification',
+  'education.english.achievement2': 'English fluency',
+  'education.english.achievement3': 'International experience',
+
+  'education.perestroika.degree': 'Chora PPT - Creative Presentations',
+  'education.perestroika.institution': 'Perestroika',
+  'education.perestroika.period': '2011',
+  'education.perestroika.description': 'Specialized course in creating creative presentations and storytelling.',
+  'education.perestroika.achievement1': 'Presentation certification',
+  'education.perestroika.achievement2': 'Advanced techniques',
+  'education.perestroika.achievement3': 'Storytelling',
 
   // Skills
   'skills.title': 'Skills & Technologies',

@@ -17,48 +17,48 @@ const Projects = () => {
   
   const projects = [
     {
-      title: "MuseuVR",
-      description: "Projeto de doutorado focado em interação natural em ambientes virtuais culturais, desenvolvendo novas formas de experiência imersiva em museus.",
+      title: t('projects.museuvr.title'),
+      description: t('projects.museuvr.description'),
       image: "https://images.unsplash.com/photo-1617802690992-15d93263d3a9?w=400&h=250&fit=crop",
       technologies: ["Unity", "VR", "C#", "Interação Natural"],
       type: "Pesquisa",
       link: "https://youtu.be/JV1fSU26OI8"
     },
     {
-      title: "Semear AgroHUB",
-      description: "Desenvolvimento de estratégia, UX e governança para hub de inovação no agronegócio, conectando produtores com tecnologias sustentáveis.",
+      title: t('projects.semear.title'),
+      description: t('projects.semear.description'),
       image: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=400&h=250&fit=crop",
       technologies: ["UX Strategy", "Service Design", "Governança", "Inovação"],
       type: "Profissional",
       link: "https://acrobat.adobe.com/link/review?uri=urn:aaid:scds:US:4887118c-3eca-3a20-ba15-09492d48bd71"
     },
     {
-      title: "Projeto Aula 360º",
-      description: "Iniciativa educacional utilizando tecnologias imersivas para criar experiências de aprendizado em realidade virtual.",
+      title: t('projects.aula360.title'),
+      description: t('projects.aula360.description'),
       image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=400&h=250&fit=crop",
       technologies: ["VR", "Educação", "Unity", "Design Educacional"],
       type: "Educacional",
       iframe: "https://player.vimeo.com/video/53293573"
     },
     {
-      title: "Avaliação app Mobiteste",
-      description: "Pesquisa e avaliação de usabilidade do aplicativo educacional Mobiteste, com foco na experiência do usuário estudante.",
+      title: t('projects.mobiteste.title'),
+      description: t('projects.mobiteste.description'),
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop",
       technologies: ["UX Research", "Usabilidade", "Mobile UX", "Educação"],
       type: "Pesquisa",
       link: "https://lume.ufrgs.br/handle/10183/159288"
     },
     {
-      title: "Ebook Leituras Obrigatórias UFRGS",
-      description: "Desenvolvimento de material educacional digital para auxiliar estudantes nas leituras obrigatórias do vestibular.",
+      title: t('projects.ebook.title'),
+      description: t('projects.ebook.description'),
       image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=250&fit=crop",
       technologies: ["Design Editorial", "UX", "Educação", "Digital Publishing"],
       type: "Editorial",
       iframe: "https://player.vimeo.com/video/140704714?h=d93163f478"
     },
     {
-      title: "Digitalização 3D: Preservação de Patrimônio",
-      description: "Desenvolvimento de repositório 3D de digitalizações de prédios históricos votaldo para preservação e divulgação do patrimônio cultural. O projeto foi um dos resultados do meu mestrado",
+      title: t('projects.digitalizacao.title'),
+      description: t('projects.digitalizacao.description'),
       image: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=400&h=250&fit=crop",
       technologies: ["AR", "Patrimônio Cultural", "Preservação", "Research"],
       type: "Pesquisa",
@@ -169,9 +169,9 @@ const Projects = () => {
                 🏆 {t('projects.patent')}
               </CardTitle>
               <CardDescription className="text-lg text-slate-700">
-                <strong>Sistema e método de produção de assentos personalizáveis</strong>
+                <strong>{t('projects.patent.title')}</strong>
                 <br />
-                Inovação tecnológica registrada com aplicação industrial.
+                {t('projects.patent.description')}
               </CardDescription>
             </CardHeader>
           </Card>

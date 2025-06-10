@@ -1,67 +1,70 @@
 
 import React from 'react';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { useLanguage } from '../hooks/useLanguage';
 
 const Experience = () => {
+  const { t } = useLanguage();
+  
   const experiences = [
     {
-      title: "Designer e Pesquisador em Inovação",
-      company: "CriaLab - Tecnopuc",
-      period: "2021 - atual",
+      title: t('experience.crialab.title'),
+      company: t('experience.crialab.company'),
+      period: t('experience.crialab.period'),
       description: [
-        "Desenvolvimento de projetos de UX/UI, IA e tecnologias imersivas (VR/AR)",
-        "Soluções estratégicas para empresas como HP e órgãos públicos",
-        "Prototipagem rápida, impressão 3D e facilitação de workshops"
+        t('experience.crialab.description1'),
+        t('experience.crialab.description2'),
+        t('experience.crialab.description3')
       ]
     },
     {
-      title: "Doutorando e Pesquisador",
-      company: "UFRGS - LdSM",
-      period: "2017 - atual",
+      title: t('experience.ufrgs.title'),
+      company: t('experience.ufrgs.company'),
+      period: t('experience.ufrgs.period'),
       description: [
-        "Pesquisa em digitalização 3D e interação em realidade virtual",
-        "Desenvolvimento do projeto MuseuVR",
-        "Publicações científicas sobre preservação de patrimônio em RA"
+        t('experience.ufrgs.description1'),
+        t('experience.ufrgs.description2'),
+        t('experience.ufrgs.description3')
       ]
     },
     {
-      title: "Professor",
-      company: "ESPM",
-      period: "2018 - 2022",
+      title: t('experience.espm.title'),
+      company: t('experience.espm.company'),
+      period: t('experience.espm.period'),
       description: [
-        "Cursos de Publicidade, Design, Jornalismo e Administração",
-        "Disciplinas: Cibercultura, Mobilidade & Apps, Design Editorial, Design Digital, Consumo e entretenimento digital, Webdesign, Projeto IV Inovação Social, Desenho Digital, Mobilidade e Aplicativos, Inovação Social"
+        t('experience.espm.description1'),
+        t('experience.espm.description2')
       ]
     },
     {
-      title: "Head de Marketing",
-      company: "BSMotion",
-      period: "2017",
+      title: t('experience.bsmotion.title'),
+      company: t('experience.bsmotion.company'),
+      period: t('experience.bsmotion.period'),
       description: [
-        "Desenvolvimento de soluções em VR com hardware e software integrados",
-        "Estratégia de marketing para startup de tecnologia",
-        "Gestão de equipe e relacionamento com clientes"
+        t('experience.bsmotion.description1'),
+        t('experience.bsmotion.description2'),
+        t('experience.bsmotion.description3')
       ]
     },
     {
-      title: "Gestor de Marketing",
-      company: "Anglo Vestibulares",
-      period: "2012-2013 / 2008",
+      title: t('experience.anglo.title'),
+      company: t('experience.anglo.company'),
+      period: t('experience.anglo.period'),
       description: [
-        "Desenvolvimento do novo site do curso",
-        "Reestruturação da comunicação institucional",
-        "Desenvolvimento de ações promocionais",
-        "Análise de mercado e estratégias competitivas"
+        t('experience.anglo.description1'),
+        t('experience.anglo.description2'),
+        t('experience.anglo.description3'),
+        t('experience.anglo.description4')
       ]
     },
     {
-      title: "Executivo de Contas e Curador",
-      company: "Campus Party Brasil",
-      period: "2010-2011",
+      title: t('experience.campus.title'),
+      company: t('experience.campus.company'),
+      period: t('experience.campus.period'),
       description: [
-        "Curadoria da área de games",
-        "Planejamento de conteúdo e gestão orçamentária",
-        "Relacionamento com patrocinadores e parceiros"
+        t('experience.campus.description1'),
+        t('experience.campus.description2'),
+        t('experience.campus.description3')
       ]
     }
   ];
@@ -70,7 +73,7 @@ const Experience = () => {
     <section id="experience" className="py-20 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-slate-800 mb-4">Experiência Profissional</h2>
+          <h2 className="text-4xl font-bold text-slate-800 mb-4">{t('experience.title')}</h2>
           <div className="w-24 h-1 bg-blue-900 mx-auto"></div>
         </div>
 
