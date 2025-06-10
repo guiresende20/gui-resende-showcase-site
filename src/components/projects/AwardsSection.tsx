@@ -10,13 +10,13 @@ const AwardsSection: React.FC = () => {
 
   const awards = [
     {
-      title: t('Prêmio Bornancini 2024'),
-      description: t('Categoria Design Digital - Realidade Aumentada e Realidades Extendidas'),
+      title: t('projects.awards.bordancini.title'),
+      description: t('projects.awards.bordancini.description'),
       link: 'https://drive.google.com/file/d/1ls8JBOotSEa8f7nBAFqPVHz0d7_P59E5/view?usp=drive_link'
     },
     {
-      title: t('39º PRÊMIO DIREITOS HUMANOS DE JORNALISMO 2022'),
-      description: t('Menção honrosa 39º PRÊMIO DIREITOS HUMANOS DE JORNALISMO 2022 - projeto Revista Ceos'),
+      title: t('projects.awards.jornalismo.title'),
+      description: t('projects.awards.jornalismo.description'),
       link: 'https://www.coletiva.net/noticias/gauchos-se-destacam-no-39-premio-direitos-humanos-de-jornalismo-,421812.jhtml'
     }
   ];
@@ -26,7 +26,7 @@ const AwardsSection: React.FC = () => {
       <Card className="border-2 border-amber-200 bg-amber-50">
         <CardHeader>
           <CardTitle className="text-2xl font-semibold text-slate-800 flex items-center gap-2">
-            🏆 {t('Prêmios e Reconhecimentos')}
+            🏆 {t('projects.awards')}
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">

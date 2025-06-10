@@ -76,6 +76,7 @@ export default {
   'projects.title': 'Projetos & Publicações',
   'projects.description': 'Seleção de projetos que demonstram minha expertise em design, tecnologia e inovação.',
   'projects.learnMore': 'Saiba Mais',
+  'projects.viewProject': 'Ver Projeto',
   'projects.patent': 'Patente Registrada',
 
   'projects.museuvr.title': 'MuseuVR',
@@ -98,6 +99,12 @@ export default {
 
   'projects.patent.title': 'Sistema e método para produção de assentos customizáveis',
   'projects.patent.description': 'Inovação tecnológica registrada com aplicação industrial.',
+
+  'projects.awards': 'Prêmios e Reconhecimentos',
+  'projects.awards.bordancini.title': 'Prêmio Bornancini 2024',
+  'projects.awards.bordancini.description': 'Categoria Design Digital - Realidade Aumentada e Realidades Extendidas',
+  'projects.awards.jornalismo.title': '39º PRÊMIO DIREITOS HUMANOS DE JORNALISMO 2022',
+  'projects.awards.jornalismo.description': 'Menção honrosa 39º PRÊMIO DIREITOS HUMANOS DE JORNALISMO 2022 - projeto Revista Ceos',
 
   // Education
   'education.title': 'Formação Acadêmica',
