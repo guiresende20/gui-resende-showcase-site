@@ -76,6 +76,7 @@ export default {
   'projects.title': 'Projetos & Publicações',
   'projects.description': 'Seleção de projetos que demonstram minha expertise em design, tecnologia e inovação.',
   'projects.learnMore': 'Saiba Mais',
+  'projects.viewProject': 'visualizar projeto',
   'projects.patent': 'Patente Registrada',
 
   'projects.museuvr.title': 'MuseuVR',
