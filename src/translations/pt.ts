@@ -107,7 +107,7 @@ export default {
   'education.phd.degree': 'Doutorado em Design',
   'education.phd.institution': 'Universidade Federal do Rio Grande do Sul (UFRGS)',
   'education.phd.period': '2017 - em andamento',
-  'education.phd.description': 'Pesquisa em digitalização 3D e interação em realidade virtual. Desenvolvimento do projeto MuseuVR para interação natural em ambientes culturais virtuais.',
+  'education.phd.description': 'Pesquisa em digitalização 3D e interação em realidade virtual NUI (natural user interaction). Desenvolvimento do projeto MuseuVR para interação natural em ambientes culturais virtuais.',
   'education.phd.achievement1': 'Bolsista CAPES',
   'education.phd.achievement2': 'Pesquisador do LdSM',
   'education.phd.achievement3': 'Publicações internacionais',
