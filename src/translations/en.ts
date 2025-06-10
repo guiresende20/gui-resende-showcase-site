@@ -1,4 +1,3 @@
-
 export default {
   // Header
   'nav.home': 'Home',
@@ -76,7 +75,9 @@ export default {
   'projects.title': 'Projects & Publications',
   'projects.description': 'A selection of projects that demonstrate my expertise in design, technology, and innovation.',
   'projects.learnMore': 'Learn More',
+  'projects.viewProject': 'View Project',
   'projects.patent': 'Registered Patent',
+  'projects.awards': 'Awards',
 
   'projects.museuvr.title': 'MuseuVR',
   'projects.museuvr.description': 'PhD project focused on natural interaction in virtual cultural environments, developing new forms of immersive experience in museums.',
@@ -98,6 +99,12 @@ export default {
 
   'projects.patent.title': 'System and method for producing customizable seats',
   'projects.patent.description': 'Registered technological innovation with industrial application.',
+
+  'projects.awards.bordancini.title': 'Bordancini Award 2024',
+  'projects.awards.bordancini.description': 'Category: Extended Realities - POSTAL IASP - ESPM Professor',
+
+  'projects.awards.jornalismo.title': 'Honorable Mention 39th Human Rights Journalism Award 2022',
+  'projects.awards.jornalismo.description': 'Ceos Magazine - Recognition for excellence in human rights journalism',
 
   // Education
   'education.title': 'Academic Background',
