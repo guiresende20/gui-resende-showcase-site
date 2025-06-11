@@ -31,8 +31,8 @@ const VideoSection: React.FC = () => {
     youtubeId: "dbQSeUF8NOQ",
     description: "Experiência de realidade virtual com grafitti"
   }];
-  return <div className="mt-12">
-      <Card className="border-2 border-red-200 bg-red-50">
+  return <div className="mt-12 bg-slate-50">
+      <Card className="border-2 border-red-200 bg-slate-50">
         <CardHeader className="bg-slate-50">
           <CardTitle className="text-2xl font-semibold text-slate-800 flex items-center gap-2">
             🎥 {t('Vídeos dos Projetos')}
