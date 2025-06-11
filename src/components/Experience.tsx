@@ -1,11 +1,12 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Calendar, MapPin, ExternalLink, Play } from 'lucide-react';
 import { useLanguage } from '../hooks/useLanguage';
+import ImageModal from './ImageModal';
 
 const Experience = () => {
   const { t } = useLanguage();
+  const [modalImage, setModalImage] = useState<{ src: string; alt: string } | null>(null);
 
   const experiences = [
     {
@@ -101,6 +102,14 @@ const Experience = () => {
     window.open(videoLink, '_blank');
   };
 
+  const handleImageClick = (imageSrc: string, imageAlt: string) => {
+    setModalImage({ src: imageSrc, alt: imageAlt });
+  };
+
+  const closeModal = () => {
+    setModalImage(null);
+  };
+
   return (
     <section id="experience" className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -153,7 +162,11 @@ const Experience = () => {
                     <h4 className="text-sm font-semibold text-slate-600 mb-3">Desenvolvimento do novo site do curso:</h4>
                     <div className="flex gap-4 flex-wrap">
                       {exp.thumbnails.map((thumbnail, thumbIndex) => (
-                        <div key={thumbIndex} className="w-24 h-24 rounded-lg overflow-hidden border border-slate-200 hover:shadow-md transition-shadow">
+                        <div 
+                          key={thumbIndex} 
+                          className="w-24 h-24 rounded-lg overflow-hidden border border-slate-200 hover:shadow-md transition-shadow cursor-pointer"
+                          onClick={() => handleImageClick(thumbnail, `Anglo Vestibulares thumbnail ${thumbIndex + 1}`)}
+                        >
                           <img 
                             src={thumbnail} 
                             alt={`Anglo Vestibulares thumbnail ${thumbIndex + 1}`}
@@ -183,6 +196,14 @@ const Experience = () => {
           ))}
         </div>
       </div>
+
+      {/* Image Modal */}
+      <ImageModal
+        isOpen={!!modalImage}
+        onClose={closeModal}
+        imageSrc={modalImage?.src || ''}
+        imageAlt={modalImage?.alt || ''}
+      />
     </section>
   );
 };
