@@ -6,6 +6,7 @@ import { getProjects } from './projects/projectsData';
 import ProjectCard from './projects/ProjectCard';
 import PatentSection from './projects/PatentSection';
 import AwardsSection from './projects/AwardsSection';
+import VideoSection from './projects/VideoSection';
 import ProjectModal from './projects/ProjectModal';
 
 const Projects = () => {
@@ -52,6 +53,7 @@ const Projects = () => {
           ))}
         </div>
 
+        <VideoSection />
         <PatentSection />
         <AwardsSection />
       </div>
