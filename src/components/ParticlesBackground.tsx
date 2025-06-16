@@ -10,7 +10,8 @@ const ParticlesBackground = () => {
   const frameIdRef = useRef<number | null>(null);
 
   useEffect(() => {
-    if (!mountRef.current) return;
+    const mountEl = mountRef.current;
+    if (!mountEl) return;
 
     // Setup
     const scene = new THREE.Scene();
@@ -19,7 +20,8 @@ const ParticlesBackground = () => {
     
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setClearColor(0x000000, 0); // Transparent background
-    mountRef.current.appendChild(renderer.domElement);
+    // Append renderer to captured mount element
+    mountEl.appendChild(renderer.domElement);
 
     // Create particles
     const particlesCount = 150;
@@ -113,15 +115,16 @@ const ParticlesBackground = () => {
 
     // Cleanup
     return () => {
+      // Use captured references in the cleanup function
       if (frameIdRef.current) {
         cancelAnimationFrame(frameIdRef.current);
       }
       window.removeEventListener('resize', handleResize);
-      if (mountRef.current && rendererRef.current) {
-        mountRef.current.removeChild(rendererRef.current.domElement);
+      if (mountEl && renderer) {
+        mountEl.removeChild(renderer.domElement);
       }
-      if (rendererRef.current) {
-        rendererRef.current.dispose();
+      if (renderer) {
+        renderer.dispose();
       }
       if (particlesRef.current) {
         particlesRef.current.geometry.dispose();
