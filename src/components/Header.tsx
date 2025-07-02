@@ -64,6 +64,16 @@ const Header = () => {
               </button>
             ))}
             
+            {/* AI Chat Button */}
+            <Button
+              variant="default"
+              size="sm"
+              onClick={() => window.open('https://chatgpt.com/g/g-68654885f5c88191b5d2df8265320cce-guilherme-resende-gpt', '_blank')}
+              className="bg-blue-900 hover:bg-blue-800 text-white"
+            >
+              Converse com minha IA
+            </Button>
+            
             {/* Language Toggle */}
             <Button
               variant="outline"
@@ -98,6 +108,16 @@ const Header = () => {
                   {item.label}
                 </button>
               ))}
+              
+              {/* Mobile AI Chat Button */}
+              <Button
+                variant="default"
+                size="sm"
+                onClick={() => window.open('https://chatgpt.com/g/g-68654885f5c88191b5d2df8265320cce-guilherme-resende-gpt', '_blank')}
+                className="mx-4 mt-2 bg-blue-900 hover:bg-blue-800 text-white"
+              >
+                Converse com minha IA
+              </Button>
               
               {/* Mobile Language Toggle */}
               <Button
