@@ -76,6 +76,12 @@ const Hero = () => {
               >
                 {t('hero.viewProjects')}
               </Button>
+              <Button
+                onClick={() => window.open('https://chatgpt.com/g/g-68654885f5c88191b5d2df8265320cce-guilherme-resende-gpt', '_blank')}
+                className="bg-blue-900 hover:bg-blue-800 text-white px-8 py-3 text-lg"
+              >
+                Converse com minha IA
+              </Button>
               <Button 
                 variant="outline"
                 onClick={() => scrollToSection('contact')}
