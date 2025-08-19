@@ -68,7 +68,15 @@ const Header = () => {
             <Button
               variant="default"
               size="sm"
-              onClick={() => window.open('https://chatgpt.com/g/g-68654885f5c88191b5d2df8265320cce-guilherme-resende-gpt', '_blank')}
+              onClick={() => {
+                console.log('Tentando abrir ChatGPT (Header)...');
+                const url = 'https://chatgpt.com/g/g-68654885f5c88191b5d2df8265320cce-guilherme-resende-gpt';
+                const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+                if (!newWindow) {
+                  console.log('Popup bloqueado, tentando alternativa...');
+                  window.location.href = url;
+                }
+              }}
               className="bg-blue-900 hover:bg-blue-800 text-white"
             >
               Converse com minha IA
@@ -113,7 +121,15 @@ const Header = () => {
               <Button
                 variant="default"
                 size="sm"
-                onClick={() => window.open('https://chatgpt.com/g/g-68654885f5c88191b5d2df8265320cce-guilherme-resende-gpt', '_blank')}
+                onClick={() => {
+                  console.log('Tentando abrir ChatGPT (Mobile)...');
+                  const url = 'https://chatgpt.com/g/g-68654885f5c88191b5d2df8265320cce-guilherme-resende-gpt';
+                  const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+                  if (!newWindow) {
+                    console.log('Popup bloqueado, tentando alternativa...');
+                    window.location.href = url;
+                  }
+                }}
                 className="mx-4 mt-2 bg-blue-900 hover:bg-blue-800 text-white"
               >
                 Converse com minha IA
