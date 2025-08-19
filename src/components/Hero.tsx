@@ -31,6 +31,8 @@ const Hero = () => {
             </p>
             <p className="text-lg text-slate-600 mb-8 leading-relaxed max-w-2xl">
               {t('hero.description')}
+              <br />
+              Link para minha IA: https://lovable.dev/projects/e79216c7-bb07-4693-9cd5-dc345bad648d
             </p>
             
             {/* Links sociais */}
