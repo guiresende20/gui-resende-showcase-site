@@ -69,11 +69,22 @@ const Header = () => {
               variant="default"
               size="sm"
               onClick={() => {
-                console.log('Tentando abrir ChatGPT (Header)...');
+                console.log('=== DEBUG: Tentando abrir ChatGPT (Header) ===');
                 const url = 'https://chatgpt.com/g/g-68654885f5c88191b5d2df8265320cce-guilherme-resende-gpt';
-                const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
-                if (!newWindow) {
-                  console.log('Popup bloqueado, tentando alternativa...');
+                console.log('URL:', url);
+                
+                try {
+                  const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+                  console.log('window.open retornou:', newWindow);
+                  
+                  if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
+                    console.log('Popup bloqueado ou falhou, usando location.href');
+                    window.location.href = url;
+                  } else {
+                    console.log('Nova janela aberta com sucesso');
+                  }
+                } catch (error) {
+                  console.error('Erro ao tentar abrir URL:', error);
                   window.location.href = url;
                 }
               }}
@@ -122,11 +133,22 @@ const Header = () => {
                 variant="default"
                 size="sm"
                 onClick={() => {
-                  console.log('Tentando abrir ChatGPT (Mobile)...');
+                  console.log('=== DEBUG: Tentando abrir ChatGPT (Mobile) ===');
                   const url = 'https://chatgpt.com/g/g-68654885f5c88191b5d2df8265320cce-guilherme-resende-gpt';
-                  const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
-                  if (!newWindow) {
-                    console.log('Popup bloqueado, tentando alternativa...');
+                  console.log('URL:', url);
+                  
+                  try {
+                    const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+                    console.log('window.open retornou:', newWindow);
+                    
+                    if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
+                      console.log('Popup bloqueado ou falhou, usando location.href');
+                      window.location.href = url;
+                    } else {
+                      console.log('Nova janela aberta com sucesso');
+                    }
+                  } catch (error) {
+                    console.error('Erro ao tentar abrir URL:', error);
                     window.location.href = url;
                   }
                 }}
