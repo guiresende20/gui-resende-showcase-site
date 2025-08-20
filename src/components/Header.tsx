@@ -65,16 +65,14 @@ const Header = () => {
             ))}
             
             {/* AI Chat Button */}
-            <Button
-              variant="default"
-              size="sm"
-              onClick={() => {
-                window.location.href = 'https://chatgpt.com/g/g-68654885f5c88191b5d2df8265320cce-guilherme-resende-gpt';
-              }}
-              className="bg-blue-900 hover:bg-blue-800 text-white"
+            <a
+              href="https://chatgpt.com/g/g-68654885f5c88191b5d2df8265320cce-guilherme-resende-gpt"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center bg-blue-900 hover:bg-blue-800 text-white px-3 py-2 text-sm rounded-md font-medium transition-colors"
             >
               Converse com minha IA
-            </Button>
+            </a>
             
             {/* Language Toggle */}
             <Button
@@ -112,16 +110,14 @@ const Header = () => {
               ))}
               
               {/* Mobile AI Chat Button */}
-              <Button
-                variant="default"
-                size="sm"
-                onClick={() => {
-                  window.location.href = 'https://chatgpt.com/g/g-68654885f5c88191b5d2df8265320cce-guilherme-resende-gpt';
-                }}
-                className="mx-4 mt-2 bg-blue-900 hover:bg-blue-800 text-white"
+              <a
+                href="https://chatgpt.com/g/g-68654885f5c88191b5d2df8265320cce-guilherme-resende-gpt"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center bg-blue-900 hover:bg-blue-800 text-white px-3 py-2 text-sm rounded-md font-medium transition-colors mx-4 mt-2"
               >
                 Converse com minha IA
-              </Button>
+              </a>
               
               {/* Mobile Language Toggle */}
               <Button

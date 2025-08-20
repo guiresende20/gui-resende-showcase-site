@@ -78,14 +78,14 @@ const Hero = () => {
               >
                 {t('hero.viewProjects')}
               </Button>
-              <Button
-                onClick={() => {
-                  window.location.href = 'https://chatgpt.com/g/g-68654885f5c88191b5d2df8265320cce-guilherme-resende-gpt';
-                }}
-                className="bg-blue-900 hover:bg-blue-800 text-white px-8 py-3 text-lg"
+              <a
+                href="https://chatgpt.com/g/g-68654885f5c88191b5d2df8265320cce-guilherme-resende-gpt"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center bg-blue-900 hover:bg-blue-800 text-white px-8 py-3 text-lg rounded-md font-medium transition-colors"
               >
                 Converse com minha IA
-              </Button>
+              </a>
               <Button 
                 variant="outline"
                 onClick={() => scrollToSection('contact')}
