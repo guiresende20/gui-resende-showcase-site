@@ -80,24 +80,7 @@ const Hero = () => {
               </Button>
               <Button
                 onClick={() => {
-                  console.log('=== DEBUG: Tentando abrir ChatGPT ===');
-                  const url = 'https://chatgpt.com/g/g-68654885f5c88191b5d2df8265320cce-guilherme-resende-gpt';
-                  console.log('URL:', url);
-                  
-                  try {
-                    const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
-                    console.log('window.open retornou:', newWindow);
-                    
-                    if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
-                      console.log('Popup bloqueado ou falhou, usando location.href');
-                      window.location.href = url;
-                    } else {
-                      console.log('Nova janela aberta com sucesso');
-                    }
-                  } catch (error) {
-                    console.error('Erro ao tentar abrir URL:', error);
-                    window.location.href = url;
-                  }
+                  window.location.href = 'https://chatgpt.com/g/g-68654885f5c88191b5d2df8265320cce-guilherme-resende-gpt';
                 }}
                 className="bg-blue-900 hover:bg-blue-800 text-white px-8 py-3 text-lg"
               >
