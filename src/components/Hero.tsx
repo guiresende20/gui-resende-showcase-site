@@ -58,7 +58,7 @@ const Hero = () => {
               <Button onClick={() => scrollToSection('projects')} className="bg-blue-900 hover:bg-blue-800 text-white px-8 py-3 text-lg">
                 {t('hero.viewProjects')}
               </Button>
-              <a href="https://chatgpt.com/g/g-68654885f5c88191b5d2df8265320cce-guilherme-resende-gpt" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center bg-blue-900 hover:bg-blue-800 text-white px-8 text-lg rounded-md font-medium transition-colors py-0">Minha I.A</a>
+              <a href="https://chatgpt.com/g/g-68654885f5c88191b5d2df8265320cce-guilherme-resende-gpt" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center bg-blue-900 hover:bg-blue-800 text-white px-8 text-lg rounded-md font-medium transition-colors py-3">Minha I.A</a>
               <Button variant="outline" onClick={() => scrollToSection('contact')} className="border-blue-900 text-blue-900 hover:bg-blue-50 px-8 py-3 text-lg">
                 {t('hero.contact')}
               </Button>
