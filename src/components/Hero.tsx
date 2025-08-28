@@ -31,7 +31,7 @@ const Hero = () => {
             <p className="text-lg text-slate-600 mb-8 leading-relaxed max-w-2xl">
               {t('hero.description')}
               <br />
-              Link para minha IA: https://chatgpt.com/g/g-68654885f5c88191b5d2df8265320cce-guilherme-resende-gpt
+              Link para minha <a href="https://chatgpt.com/g/g-68654885f5c88191b5d2df8265320cce-guilherme-resende-gpt" target="_blank" rel="noopener noreferrer" className="text-blue-900 hover:text-blue-800 underline">IA</a>: https://chatgpt.com/g/g-68654885f5c88191b5d2df8265320cce-guilherme-resende-gpt
             </p>
             
             {/* Links sociais */}
