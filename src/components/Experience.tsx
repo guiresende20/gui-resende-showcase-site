@@ -3,10 +3,13 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Calendar, MapPin, ExternalLink, Play } from 'lucide-react';
 import { useLanguage } from '../hooks/useLanguage';
 import ImageModal from './ImageModal';
+import ProjectModal from './projects/ProjectModal';
 
 const Experience = () => {
   const { t } = useLanguage();
   const [modalImage, setModalImage] = useState<{ src: string; alt: string } | null>(null);
+  const [videoModalOpen, setVideoModalOpen] = useState(false);
+  const [videoModalContent, setVideoModalContent] = useState({ title: '', iframe: '' });
 
   const experiences = [
     {
@@ -99,7 +102,28 @@ const Experience = () => {
   };
 
   const handleVideoClick = (videoLink: string) => {
-    window.open(videoLink, '_blank');
+    const toYouTubeEmbed = (url: string) => {
+      try {
+        let videoId = '';
+        if (url.includes('youtu.be/')) {
+          videoId = url.split('youtu.be/')[1]?.split(/[?&]/)[0] ?? '';
+        } else if (url.includes('watch?v=')) {
+          const u = new URL(url);
+          videoId = u.searchParams.get('v') ?? '';
+        } else if (url.includes('/shorts/')) {
+          videoId = url.split('/shorts/')[1]?.split(/[?&]/)[0] ?? '';
+        }
+        return videoId ? `https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1` : url;
+      } catch {
+        return url;
+      }
+    };
+
+    setVideoModalContent({
+      title: 'Campus Party Brasil',
+      iframe: toYouTubeEmbed(videoLink)
+    });
+    setVideoModalOpen(true);
   };
 
   const handleImageClick = (imageSrc: string, imageAlt: string) => {
@@ -203,6 +227,13 @@ const Experience = () => {
         onClose={closeModal}
         imageSrc={modalImage?.src || ''}
         imageAlt={modalImage?.alt || ''}
+      />
+
+      {/* Video Modal */}
+      <ProjectModal
+        isOpen={videoModalOpen}
+        onClose={() => setVideoModalOpen(false)}
+        content={videoModalContent}
       />
     </section>
   );
