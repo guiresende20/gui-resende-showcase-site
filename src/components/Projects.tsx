@@ -21,6 +21,26 @@ const Projects = () => {
   const projects = getProjects(t);
 
   const handleLearnMore = (project: Project) => {
+    const isYouTubeUrl = (url: string) =>
+      url.includes('youtube.com') || url.includes('youtu.be');
+
+    const toYouTubeEmbed = (url: string) => {
+      try {
+        let videoId = '';
+        if (url.includes('youtu.be/')) {
+          videoId = url.split('youtu.be/')[1]?.split(/[?&]/)[0] ?? '';
+        } else if (url.includes('watch?v=')) {
+          const u = new URL(url);
+          videoId = u.searchParams.get('v') ?? '';
+        } else if (url.includes('/shorts/')) {
+          videoId = url.split('/shorts/')[1]?.split(/[?&]/)[0] ?? '';
+        }
+        return videoId ? `https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1` : url;
+      } catch {
+        return url;
+      }
+    };
+
     if (project.iframe) {
       setModalContent({
         title: project.title,
@@ -28,7 +48,15 @@ const Projects = () => {
       });
       setModalOpen(true);
     } else if (project.link) {
-      window.open(project.link, '_blank');
+      if (isYouTubeUrl(project.link)) {
+        setModalContent({
+          title: project.title,
+          iframe: toYouTubeEmbed(project.link)
+        });
+        setModalOpen(true);
+      } else {
+        window.open(project.link, '_blank');
+      }
     }
   };
 
