@@ -57,5 +57,13 @@ export const getProjects = (t: (key: string) => string): Project[] => [
     technologies: ["IA Generativa", "Arte Digital", "Fotografia Analógica", "Exposição 360°"],
     type: "Arte",
     link: "https://youtu.be/-djac5g7_QE"
+  },
+  {
+    title: t('projects.iaspi.title'),
+    description: t('projects.iaspi.description'),
+    image: "https://images.unsplash.com/photo-1617802690992-15d93263d3a9?w=400&h=250&fit=crop",
+    technologies: ["AR", "3D", "Design", "Cartão Postal"],
+    type: "Profissional",
+    link: "https://youtu.be/D8rCRnvKOtg"
   }
 ];

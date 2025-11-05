@@ -100,6 +100,9 @@ export default {
   'projects.mata.title': 'Mata',
   'projects.mata.description': 'Exhibition involving generative imagery from analog photos for a 360° room exhibition.',
 
+  'projects.iaspi.title': 'IASPI AR - 3D',
+  'projects.iaspi.description': 'Creation of a postcard with augmented reality content of Porto Alegre city for the international meeting of technology parks.',
+
   'projects.patent.title': 'System and method for producing customizable seats',
   'projects.patent.description': 'Registered technological innovation with industrial application.',
 
