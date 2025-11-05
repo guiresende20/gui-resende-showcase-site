@@ -97,6 +97,9 @@ export default {
   'projects.digitalizacao.title': 'Digitalização 3D: Preservação Patrimonial',
   'projects.digitalizacao.description': 'Desenvolvimento de repositório 3D de digitalizações de prédios históricos voltado à preservação e difusão do patrimônio cultural. O projeto foi um dos resultados do meu mestrado.',
 
+  'projects.mata.title': 'Mata',
+  'projects.mata.description': 'Exposição envolvendo imagem generativa a partir de fotos analógicas para exposição numa sala 360°.',
+
   'projects.patent.title': 'Sistema e método para produção de assentos customizáveis',
   'projects.patent.description': 'Inovação tecnológica registrada com aplicação industrial.',
 

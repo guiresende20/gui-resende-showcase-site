@@ -49,5 +49,13 @@ export const getProjects = (t: (key: string) => string): Project[] => [
     technologies: ["AR", "Patrimônio Cultural", "Preservação", "Research"],
     type: "Pesquisa",
     link: "https://www.ufrgs.br/ldsm/3d/"
+  },
+  {
+    title: t('projects.mata.title'),
+    description: t('projects.mata.description'),
+    image: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=400&h=250&fit=crop",
+    technologies: ["IA Generativa", "Arte Digital", "Fotografia Analógica", "Exposição 360°"],
+    type: "Arte",
+    link: "https://youtu.be/-djac5g7_QE"
   }
 ];

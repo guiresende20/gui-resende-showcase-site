@@ -97,6 +97,9 @@ export default {
   'projects.digitalizacao.title': '3D Digitization: Heritage Preservation',
   'projects.digitalizacao.description': 'Development of 3D repository of digitizations of historic buildings aimed at preserving and disseminating cultural heritage. The project was one of the results of my master\'s degree.',
 
+  'projects.mata.title': 'Mata',
+  'projects.mata.description': 'Exhibition involving generative imagery from analog photos for a 360° room exhibition.',
+
   'projects.patent.title': 'System and method for producing customizable seats',
   'projects.patent.description': 'Registered technological innovation with industrial application.',
 
