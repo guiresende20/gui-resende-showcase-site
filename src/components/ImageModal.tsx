@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { X } from 'lucide-react';
 
 interface ImageModalProps {
@@ -10,6 +10,16 @@ interface ImageModalProps {
 }
 
 const ImageModal: React.FC<ImageModalProps> = ({ isOpen, onClose, imageSrc, imageAlt }) => {
+  useEffect(() => {
+    const handleEsc = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') onClose();
+    };
+
+    if (isOpen) window.addEventListener('keydown', handleEsc);
+
+    return () => window.removeEventListener('keydown', handleEsc);
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   const handleBackdropClick = (e: React.MouseEvent) => {
@@ -27,6 +37,7 @@ const ImageModal: React.FC<ImageModalProps> = ({ isOpen, onClose, imageSrc, imag
         <button
           onClick={onClose}
           className="absolute -top-4 -right-4 p-2 bg-white rounded-full shadow-lg hover:bg-gray-100 transition-colors z-10"
+          aria-label="Fechar visualização da imagem"
         >
           <X size={20} className="text-gray-800" />
         </button>

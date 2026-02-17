@@ -140,12 +140,19 @@ const Experience = () => {
                 </ul>
                 {exp.thumbnails && (
                   <div className="mt-6">
-                    <h4 className="text-sm font-semibold text-slate-600 mb-3">Desenvolvimento do novo site do curso:</h4>
+                    <h4 className="text-sm font-semibold text-slate-600 mb-1">Desenvolvimento do novo site do curso:</h4>
+                    <p className="text-xs text-slate-500 mb-3">Clique nas imagens para ampliar.</p>
                     <div className="flex gap-4 flex-wrap">
                       {exp.thumbnails.map((thumbnail, thumbIndex) => (
-                        <div key={thumbIndex} className="w-24 h-24 rounded-lg overflow-hidden border border-slate-200 hover:shadow-md transition-shadow cursor-pointer" onClick={() => handleImageClick(thumbnail, `Anglo Vestibulares thumbnail ${thumbIndex + 1}`)}>
+                        <button
+                          key={thumbIndex}
+                          type="button"
+                          className="w-24 h-24 rounded-lg overflow-hidden border border-slate-200 hover:shadow-md transition-shadow cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          onClick={() => handleImageClick(thumbnail, `Anglo Vestibulares thumbnail ${thumbIndex + 1}`)}
+                          aria-label={`Ampliar imagem ${thumbIndex + 1} do projeto Anglo Vestibulares`}
+                        >
                           <img src={thumbnail} alt={`Anglo Vestibulares thumbnail ${thumbIndex + 1}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
-                        </div>
+                        </button>
                       ))}
                     </div>
                   </div>
