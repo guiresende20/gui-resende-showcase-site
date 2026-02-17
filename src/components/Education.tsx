@@ -1,92 +1,59 @@
-
 import React from 'react';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { GraduationCap, Award, ExternalLink } from 'lucide-react';
 import { useLanguage } from '../hooks/useLanguage';
+import { useScrollReveal, useStaggerReveal } from '../hooks/useScrollReveal';
 
 const Education = () => {
   const { t } = useLanguage();
-  
+  const { ref: titleRef, isVisible: titleVisible } = useScrollReveal();
+
   const education = [
     {
-      degree: t('education.phd.degree'),
-      institution: t('education.phd.institution'),
-      period: t('education.phd.period'),
+      degree: t('education.phd.degree'), institution: t('education.phd.institution'), period: t('education.phd.period'),
       description: t('education.phd.description'),
-      achievements: [
-        t('education.phd.achievement1'),
-        t('education.phd.achievement2'),
-        t('education.phd.achievement3')
-      ]
+      achievements: [t('education.phd.achievement1'), t('education.phd.achievement2'), t('education.phd.achievement3')]
     },
     {
-      degree: t('education.master.degree'),
-      institution: t('education.master.institution'),
-      period: t('education.master.period'),
+      degree: t('education.master.degree'), institution: t('education.master.institution'), period: t('education.master.period'),
       description: t('education.master.description'),
-      achievements: [
-        t('education.master.achievement1'),
-        t('education.master.achievement2'),
-        t('education.master.achievement3'),
-        {
-          text: t('education.master.achievement4'),
-          link: "https://www.lume.ufrgs.br/handle/10183/143935"
-        }
-      ]
+      achievements: [t('education.master.achievement1'), t('education.master.achievement2'), t('education.master.achievement3'),
+        { text: t('education.master.achievement4'), link: "https://www.lume.ufrgs.br/handle/10183/143935" }]
     },
     {
-      degree: t('education.bachelor.degree'),
-      institution: t('education.bachelor.institution'),
-      period: t('education.bachelor.period'),
+      degree: t('education.bachelor.degree'), institution: t('education.bachelor.institution'), period: t('education.bachelor.period'),
       description: t('education.bachelor.description'),
-      achievements: [
-        t('education.bachelor.achievement1'),
-        t('education.bachelor.achievement2'),
-        t('education.bachelor.achievement3'),
-        {
-          text: t('education.bachelor.achievement4'),
-          link: "https://bibliotecadigital.ufrgs.br/handle/10183/37592"
-        }
-      ]
+      achievements: [t('education.bachelor.achievement1'), t('education.bachelor.achievement2'), t('education.bachelor.achievement3'),
+        { text: t('education.bachelor.achievement4'), link: "https://bibliotecadigital.ufrgs.br/handle/10183/37592" }]
     },
     {
-      degree: t('education.english.degree'),
-      institution: t('education.english.institution'),
-      period: t('education.english.period'),
+      degree: t('education.english.degree'), institution: t('education.english.institution'), period: t('education.english.period'),
       description: t('education.english.description'),
-      achievements: [
-        t('education.english.achievement1'),
-        t('education.english.achievement2'),
-        t('education.english.achievement3')
-      ]
+      achievements: [t('education.english.achievement1'), t('education.english.achievement2'), t('education.english.achievement3')]
     },
     {
-      degree: t('education.perestroika.degree'),
-      institution: t('education.perestroika.institution'),
-      period: t('education.perestroika.period'),
+      degree: t('education.perestroika.degree'), institution: t('education.perestroika.institution'), period: t('education.perestroika.period'),
       description: t('education.perestroika.description'),
-      achievements: [
-        t('education.perestroika.achievement1'),
-        t('education.perestroika.achievement2'),
-        t('education.perestroika.achievement3')
-      ]
+      achievements: [t('education.perestroika.achievement1'), t('education.perestroika.achievement2'), t('education.perestroika.achievement3')]
     }
   ];
 
+  const { ref: cardsRef, isVisible: cardsVisible, getStaggerDelay } = useStaggerReveal(education.length);
+
   return (
-    <section id="education" className="py-20 bg-white">
+    <section id="education" className="py-20 bg-gradient-to-b from-white to-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div ref={titleRef} className={`text-center mb-16 scroll-reveal ${titleVisible ? 'visible' : ''}`}>
           <h2 className="text-4xl font-bold text-slate-800 mb-4">{t('education.title')}</h2>
           <div className="w-24 h-1 bg-blue-900 mx-auto"></div>
         </div>
 
-        <div className="space-y-8">
+        <div ref={cardsRef} className="space-y-8">
           {education.map((edu, index) => (
-            <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
+            <Card key={index} className={`glass-card gradient-border-hover scroll-reveal ${cardsVisible ? 'visible' : ''}`} style={getStaggerDelay(index)}>
               <CardHeader className="pb-4">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0 icon-bounce">
                     <GraduationCap className="text-blue-900" size={24} />
                   </div>
                   <div className="flex-1">
@@ -113,14 +80,8 @@ const Education = () => {
                           <span className="text-slate-600">{achievement}</span>
                         ) : (
                           <span className="text-slate-600">
-                            <a 
-                              href={achievement.link} 
-                              target="_blank" 
-                              rel="noopener noreferrer"
-                              className="text-blue-600 hover:text-blue-800 underline inline-flex items-center gap-1"
-                            >
-                              {achievement.text}
-                              <ExternalLink size={14} />
+                            <a href={achievement.link} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline inline-flex items-center gap-1">
+                              {achievement.text}<ExternalLink size={14} />
                             </a>
                           </span>
                         )}
