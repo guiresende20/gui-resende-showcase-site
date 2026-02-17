@@ -41,16 +41,16 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ videos }) => {
                 className="w-full h-full"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+                allowFullScreen />
+
             </div>
             <div className="p-4">
               <h3 className="text-xl font-semibold text-slate-800 mb-2">
                 {currentVideo.title}
               </h3>
-              {currentVideo.description && (
-                <p className="text-slate-600">{currentVideo.description}</p>
-              )}
+              {currentVideo.description &&
+              <p className="text-slate-600">{currentVideo.description}</p>
+              }
             </div>
           </CardContent>
         </Card>
@@ -67,26 +67,26 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ videos }) => {
           <CardContent>
             <ScrollArea className="h-96">
               <div className="space-y-2 pr-4">
-                {videos.map((video, index) => (
-                  <Button
-                    key={index}
-                    variant={currentVideo.youtubeId === video.youtubeId ? "default" : "outline"}
-                    className="w-full justify-start text-left h-auto p-3"
-                    onClick={() => handleVideoSelect(video)}
-                  >
+                {videos.map((video, index) =>
+                <Button
+                  key={index}
+                  variant={currentVideo.youtubeId === video.youtubeId ? "default" : "outline"}
+                  className="w-full justify-start text-left h-auto p-3"
+                  onClick={() => handleVideoSelect(video)}>
+
                     <div className="flex items-start gap-3">
                       <Play size={16} className="mt-1 flex-shrink-0" />
-                      <span className="text-sm leading-tight">{video.title}</span>
+                      <span className="text-sm leading-tight font-extralight">{video.title}</span>
                     </div>
                   </Button>
-                ))}
+                )}
               </div>
             </ScrollArea>
           </CardContent>
         </Card>
       </div>
-    </div>
-  );
+    </div>);
+
 };
 
 export default VideoPlayer;
