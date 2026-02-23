@@ -18,7 +18,7 @@ export default {
   // About
   'about.title': 'Sobre Mim',
   'about.journey': 'Trajetória Acadêmica e Profissional',
-  'about.description1': 'Designer e pesquisador com mestrado em Design e Tecnologia e graduação em Comunicação Social pela UFRGS. Atuo no CriaLab - Tecnopuc com projetos de UX/UI, IA e tecnologias imersivas (VR/AR), desenvolvendo soluções estratégicas para empresas como a HP e órgãos públicos (ex.: Semear Agrohub).',
+  'about.description1': 'Designer e pesquisador com mestrado em Design e Tecnologia e graduação em Comunicação Social pela UFRGS. Atuo no CriaLab - Tecnopuc com projetos de inovação e tecnologia, incluindo tecnologias imersivas (VR/AR), desenvolvendo soluções estratégicas para empresas como a HP e órgãos públicos (ex.: Semear Agrohub).',
   'about.description2': 'Tenho experiência prática em prototipagem rápida, impressão 3D e facilitação de workshops. Sou entusiasta da tecnologia e utilizo IA para análises estratégicas, geração de insights e design de serviços.',
   'about.description3': 'Minha trajetória inclui passagens pela ESPM como professor, pelo marketing do Anglo Vestibulares e pela startup BSMotion, sempre na intersecção entre tecnologia, design e inovação.',
   'about.ux.title': 'UX/UI Design',
