@@ -29,7 +29,7 @@ const Index = () => {
         <SectionDivider variant="curve" fromColor="#f8fafc" toColor="#ffffff" />
         <Skills />
         <SectionDivider variant="wave" fromColor="#f8fbff" toColor="#f8fafc" />
-        <Contact className="rounded-sm" />
+        <Contact />
         <Footer />
       </div>
     </div>);

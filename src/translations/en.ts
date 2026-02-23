@@ -17,7 +17,7 @@ export default {
   // About
   'about.title': 'About Me',
   'about.journey': 'Academic and Professional Journey',
-  'about.description1': 'Designer and researcher with a Master\'s degree in Design and Technology and a Bachelor\'s degree in Social Communication from UFRGS. I work at CriaLab - Tecnopuc on UX/UI, AI, and immersive technology (VR/AR) projects, developing strategic solutions for companies like HP and public organizations (e.g., Semear Agrohub).',
+  'about.description1': 'Designer and researcher with a Master\'s degree in Design and Technology and a Bachelor\'s degree in Social Communication from UFRGS. I work at CriaLab - Tecnopuc on innovation and technology projects, including immersive technologies (VR/AR), developing strategic solutions for companies like HP and public organizations (e.g., Semear Agrohub).',
   'about.description2': 'I have practical experience in rapid prototyping, 3D printing, and workshop facilitation. I am a technology enthusiast and use AI for strategic analysis, insight generation, and service design.',
   'about.description3': 'My journey includes positions at ESPM as a professor, marketing at Anglo Vestibulares, and the startup BSMotion, always at the intersection of technology, design, and innovation.',
   'about.ux.title': 'UX/UI Design',
