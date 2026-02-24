@@ -5,11 +5,12 @@ import { Mail, MessageSquare, MapPin, Linkedin, ExternalLink } from 'lucide-reac
 import { useScrollReveal, useStaggerReveal } from '../hooks/useScrollReveal';
 
 const Contact = () => {
+  const { ref: sectionRef, isVisible: sectionVisible } = useScrollReveal({ threshold: 0.05 });
   const { ref: titleRef, isVisible: titleVisible } = useScrollReveal();
   const { ref: cardsRef, isVisible: cardsVisible, getStaggerDelay } = useStaggerReveal(3);
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-b from-slate-50 to-blue-50/20">
+    <section id="contact" ref={sectionRef} className={`py-20 bg-gradient-to-b from-slate-50 to-blue-50/20 section-transition-left ${sectionVisible ? 'visible' : ''}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={titleRef} className={`text-center mb-16 scroll-reveal ${titleVisible ? 'visible' : ''}`}>
           <h2 className="text-4xl font-bold text-slate-800 mb-4">Entre em Contato</h2>

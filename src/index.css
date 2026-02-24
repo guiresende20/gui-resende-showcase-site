@@ -7,6 +7,11 @@
 
 @layer base {
   :root {
+    --circle-top-right-out: circle(0% at 100% 0%);
+    --circle-bottom-right-in: circle(150% at 100% 100%);
+    --circle-top-left-out: circle(0% at 0% 0%);
+    --circle-bottom-left-in: circle(150% at 0% 100%);
+
     --background: 0 0% 96%;
     --foreground: 0 0% 9%;
 
@@ -134,6 +139,37 @@
   .text-balance {
     text-wrap: balance;
   }
+}
+
+/* Circle Swoop section transitions */
+@keyframes in-circle-swoop {
+  from { clip-path: var(--circle-top-right-out); }
+  to { clip-path: var(--circle-bottom-right-in); }
+}
+
+@keyframes in-circle-swoop-left {
+  from { clip-path: var(--circle-top-left-out); }
+  to { clip-path: var(--circle-bottom-left-in); }
+}
+
+.section-transition {
+  clip-path: var(--circle-top-right-out);
+  opacity: 0;
+}
+
+.section-transition.visible {
+  animation: in-circle-swoop 1.2s ease-out forwards;
+  opacity: 1;
+}
+
+.section-transition-left {
+  clip-path: var(--circle-top-left-out);
+  opacity: 0;
+}
+
+.section-transition-left.visible {
+  animation: in-circle-swoop-left 1.2s ease-out forwards;
+  opacity: 1;
 }
 
 /* Scroll Reveal animations */

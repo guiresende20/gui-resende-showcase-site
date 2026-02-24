@@ -42,8 +42,10 @@ const Projects = () => {
     }
   };
 
+  const { ref: sectionRef, isVisible: sectionVisible } = useScrollReveal({ threshold: 0.05 });
+
   return (
-    <section id="projects" className="py-20 bg-gradient-to-b from-slate-50 to-blue-50/30">
+    <section id="projects" ref={sectionRef} className={`py-20 bg-gradient-to-b from-slate-50 to-blue-50/30 section-transition ${sectionVisible ? 'visible' : ''}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={titleRef} className={`text-center mb-16 scroll-reveal ${titleVisible ? 'visible' : ''}`}>
           <h2 className="text-4xl font-bold text-slate-800 mb-4">{t('projects.title')}</h2>
