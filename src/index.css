@@ -143,33 +143,29 @@
 
 /* Circle Swoop section transitions */
 @keyframes in-circle-swoop {
-  from { clip-path: var(--circle-top-right-out); }
-  to { clip-path: var(--circle-bottom-right-in); }
+  from { clip-path: circle(0% at 100% 0%); }
+  to { clip-path: circle(150% at 100% 100%); }
 }
 
 @keyframes in-circle-swoop-left {
-  from { clip-path: var(--circle-top-left-out); }
-  to { clip-path: var(--circle-bottom-left-in); }
+  from { clip-path: circle(0% at 0% 0%); }
+  to { clip-path: circle(150% at 0% 100%); }
 }
 
 .section-transition {
-  clip-path: var(--circle-top-right-out);
-  opacity: 0;
+  clip-path: circle(0% at 100% 0%);
 }
 
 .section-transition.visible {
   animation: in-circle-swoop 1.2s ease-out forwards;
-  opacity: 1;
 }
 
 .section-transition-left {
-  clip-path: var(--circle-top-left-out);
-  opacity: 0;
+  clip-path: circle(0% at 0% 0%);
 }
 
 .section-transition-left.visible {
   animation: in-circle-swoop-left 1.2s ease-out forwards;
-  opacity: 1;
 }
 
 /* Scroll Reveal animations */
