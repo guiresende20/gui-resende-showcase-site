@@ -2,16 +2,17 @@ import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Linkedin, Mail, MessageSquare, ExternalLink } from 'lucide-react';
 import { useLanguage } from '../hooks/useLanguage';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const Hero = () => {
   const { t } = useLanguage();
   const [showTyping, setShowTyping] = useState(false);
+  const { ref: sectionRef, isVisible: sectionVisible } = useScrollReveal({ threshold: 0.05 });
 
   useEffect(() => {
     const timer = setTimeout(() => setShowTyping(true), 500);
     return () => clearTimeout(timer);
   }, []);
-
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -20,7 +21,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="pt-20 pb-16 bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100">
+    <section id="hero" ref={sectionRef} className={`pt-20 pb-16 bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 section-transition ${sectionVisible ? 'visible' : ''}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center justify-between">
           <div className="lg:w-1/2 text-center lg:text-left mb-8 lg:mb-0 animate-fade-up">
