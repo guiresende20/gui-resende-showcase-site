@@ -5,13 +5,12 @@ import { useScrollReveal, useStaggerReveal } from '../hooks/useScrollReveal';
 
 const About = () => {
   const { t } = useLanguage();
-  const { ref: sectionRef, isVisible: sectionVisible } = useScrollReveal({ threshold: 0.05 });
   const { ref: titleRef, isVisible: titleVisible } = useScrollReveal();
   const { ref: textRef, isVisible: textVisible } = useScrollReveal();
   const { ref: cardsRef, isVisible: cardsVisible, getStaggerDelay } = useStaggerReveal(3);
 
   return (
-    <section id="about" ref={sectionRef} className={`py-20 bg-gradient-to-b from-white to-slate-50 section-transition ${sectionVisible ? 'visible' : ''}`}>
+    <section id="about" className="py-20 bg-gradient-to-b from-white to-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={titleRef} className={`text-center mb-16 scroll-reveal ${titleVisible ? 'visible' : ''}`}>
           <h2 className="text-4xl font-bold text-slate-800 mb-4">{t('about.title')}</h2>

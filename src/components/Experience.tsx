@@ -97,10 +97,8 @@ const Experience = () => {
 
   const handleImageClick = (imageSrc: string, imageAlt: string) => setModalImage({ src: imageSrc, alt: imageAlt });
 
-  const { ref: sectionRef, isVisible: sectionVisible } = useScrollReveal({ threshold: 0.05 });
-
   return (
-    <section id="experience" ref={sectionRef} className={`py-20 bg-gradient-to-b from-white to-slate-50 section-transition-left ${sectionVisible ? 'visible' : ''}`}>
+    <section id="experience" className="py-20 bg-gradient-to-b from-white to-slate-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={titleRef} className={`text-center mb-16 scroll-reveal ${titleVisible ? 'visible' : ''}`}>
           <h2 className="text-4xl font-bold text-slate-800 mb-4">{t('experience.title')}</h2>
