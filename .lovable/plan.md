@@ -1,64 +1,91 @@
 
-# Melhorias Visuais e Transicoes do Site
+# Transicoes CSS com Circle-Swoop entre Secoes
 
-## 1. Animacoes de Entrada (Scroll Reveal)
+## Objetivo
+Adicionar transicoes visuais no estilo `clip-path` circle-swoop que ativam conforme o usuario rola a pagina. As secoes afetadas serao: **Inicio (Hero), Sobre, Experiencia, Projetos e Contato**.
 
-Criar um hook customizado `useScrollReveal` que usa `IntersectionObserver` para animar elementos quando entram na viewport. Cada secao tera animacoes de fade-in + slide-up ao rolar a pagina.
+## Como funciona
+Cada secao tera um efeito de revelacao com `clip-path` animado (circle-swoop) que dispara quando a secao entra na viewport via `IntersectionObserver`. Isso cria a sensacao de que cada bloco do site "aparece" de forma dramatica, quebrando a continuidade visual.
 
-- Elementos aparecem suavemente conforme o usuario rola
-- Cards e itens de lista animam com delay escalonado (stagger)
-- Titulos de secao animam separadamente dos conteudos
+## Implementacao
 
-## 2. Transicoes entre Secoes
+### 1. Adicionar CSS custom properties e keyframes em `src/index.css`
 
-- Adicionar separadores visuais entre secoes usando formas SVG (wave dividers / diagonal dividers)
-- Alternar fundos entre secoes com gradientes mais expressivos (ao inves de apenas `bg-white` e `bg-slate-50`)
+Definir as variaveis de clip-path e a animacao `in-circle-swoop`:
 
-## 3. Melhorias Visuais nos Componentes
+```css
+:root {
+  --circle-top-right-out: circle(0% at 100% 0%);
+  --circle-bottom-right-in: circle(150% at 100% 100%);
+  --circle-top-left-out: circle(0% at 0% 0%);
+  --circle-bottom-left-in: circle(150% at 0% 100%);
+}
 
-### Hero
-- Adicionar animacao de typing/typewriter no subtitulo
-- Efeito de glow pulsante no avatar
-- Botoes com efeito hover mais sofisticado (gradiente + sombra)
+@keyframes in-circle-swoop {
+  from { clip-path: var(--circle-top-right-out); }
+  to { clip-path: var(--circle-bottom-right-in); }
+}
 
-### Cards (About, Skills, Experience, Education, Contact)
-- Adicionar borda gradiente sutil nos cards ao hover
-- Efeito glassmorphism leve nos cards
-- Icones com animacao de bounce ao hover
+@keyframes in-circle-swoop-left {
+  from { clip-path: var(--circle-top-left-out); }
+  to { clip-path: var(--circle-bottom-left-in); }
+}
 
-### Skills
-- Barras de progresso animam ao entrar na viewport (de 0% ate o valor final)
-- Adicionar efeito de brilho (shimmer) nas barras
+.section-transition {
+  clip-path: var(--circle-top-right-out);
+  opacity: 0;
+}
 
-### Projects
-- Cards com efeito de tilt 3D sutil ao hover (CSS perspective)
-- Overlay gradiente mais dinamico nas imagens
+.section-transition.visible {
+  animation: in-circle-swoop 1.2s ease-out forwards;
+  opacity: 1;
+}
 
-### Header
-- Efeito de blur mais forte e borda sutil ao rolar
+.section-transition-left {
+  clip-path: var(--circle-top-left-out);
+  opacity: 0;
+}
 
-## Detalhes Tecnicos
+.section-transition-left.visible {
+  animation: in-circle-swoop-left 1.2s ease-out forwards;
+  opacity: 1;
+}
+```
 
-### Novo arquivo: `src/hooks/useScrollReveal.ts`
-Hook que usa IntersectionObserver para detectar quando elementos entram na viewport e aplica classes CSS de animacao.
+### 2. Criar hook `useSectionTransition` ou reutilizar `useScrollReveal`
 
-### Novo arquivo: `src/components/SectionDivider.tsx`
-Componente SVG reutilizavel para criar divisores visuais ondulados/diagonais entre secoes.
+Reutilizar o hook `useScrollReveal` existente para detectar quando a secao entra na viewport e aplicar a classe `visible`.
 
-### Alteracoes no `tailwind.config.ts`
-Adicionar keyframes customizados: `fade-up`, `fade-in-left`, `fade-in-right`, `shimmer`, `float`, `glow`.
+### 3. Modificar os componentes das secoes
 
-### Alteracoes no `src/index.css`
-Adicionar classes utilitarias para animacoes e glassmorphism.
+Envolver o conteudo de cada secao num wrapper `<div>` com a classe `section-transition` e o ref do `useScrollReveal`:
 
-### Componentes modificados:
-- **Hero.tsx** - Animacoes de entrada, glow no avatar, typing effect
-- **About.tsx** - Scroll reveal nos cards, gradiente de fundo
-- **Experience.tsx** - Scroll reveal com stagger nos cards
-- **Projects.tsx** - Scroll reveal, tilt effect nos cards
-- **Education.tsx** - Scroll reveal com stagger
-- **Skills.tsx** - Barras animadas ao scroll, shimmer
-- **Contact.tsx** - Scroll reveal nos cards
-- **Footer.tsx** - Animacao sutil de entrada
-- **Header.tsx** - Blur aprimorado
-- **Index.tsx** - Adicionar SectionDivider entre secoes
+- **Hero** (`src/components/Hero.tsx`) - classe `section-transition`, anima ao carregar
+- **About** (`src/components/About.tsx`) - classe `section-transition`
+- **Experience** (`src/components/Experience.tsx`) - classe `section-transition-left` (variacao)
+- **Projects** (`src/components/Projects.tsx`) - classe `section-transition`
+- **Contact** (`src/components/Contact.tsx`) - classe `section-transition-left` (variacao)
+
+Education, Skills e Footer permanecem sem esta transicao, mantendo o scroll-reveal atual.
+
+### 4. Remover SectionDividers entre secoes com transicao
+
+Os `SectionDivider` entre as secoes que terao o circle-swoop podem ser mantidos ou removidos conforme o efeito visual. Vou mante-los por enquanto pois adicionam profundidade.
+
+## Arquivos modificados
+
+| Arquivo | Alteracao |
+|---|---|
+| `src/index.css` | Adicionar CSS variables, keyframes e classes de transicao |
+| `src/components/Hero.tsx` | Envolver conteudo com wrapper de transicao |
+| `src/components/About.tsx` | Adicionar wrapper section-transition |
+| `src/components/Experience.tsx` | Adicionar wrapper section-transition-left |
+| `src/components/Projects.tsx` | Adicionar wrapper section-transition |
+| `src/components/Contact.tsx` | Adicionar wrapper section-transition-left |
+
+## Detalhes tecnicos
+
+- A animacao usa `clip-path: circle()` que e bem suportado em navegadores modernos
+- O `IntersectionObserver` do hook existente dispara a animacao uma unica vez (triggerOnce = true)
+- Alternancia entre direcao direita e esquerda cria ritmo visual
+- Duracao de 1.2s com `ease-out` para movimento suave e organico
