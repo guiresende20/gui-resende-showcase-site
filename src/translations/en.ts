@@ -8,9 +8,9 @@ export default {
 
   // Hero
   'hero.title': 'Guilherme Resende Muniz',
-  'hero.subtitle': 'Innovation Designer | UX/UI | AI | VR/AR',
+  'hero.subtitle': 'Innovation Designer and Emerging Technologies',
   'hero.location': '📍 Porto Alegre - RS, Brazil',
-  'hero.description': 'Designer and researcher with a Master\'s degree in Design and Technology. I work at CriaLab - Tecnopuc on UX/UI, AI, and immersive technology (VR/AR) projects, developing strategic solutions for companies like HP and public organizations.',
+  'hero.description': 'I work at the intersection of design, artificial intelligence, and emerging technologies, exploring new forms of creation, prototyping, and applied innovation in education, culture, and organizations.',
   'hero.viewProjects': 'View Projects',
   'hero.contact': 'Get in Touch',
 
