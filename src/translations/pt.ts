@@ -9,9 +9,9 @@ export default {
 
   // Hero
   'hero.title': 'Guilherme Resende Muniz',
-  'hero.subtitle': 'Designer de Inovação | UX/UI | IA | VR/AR',
+  'hero.subtitle': 'Designer de Inovação e Tecnologias Emergentes',
   'hero.location': '📍 Porto Alegre - RS, Brasil',
-  'hero.description': 'Designer e pesquisador com mestrado em Design e Tecnologia. Atuo no CriaLab - Tecnopuc com projetos de UX/UI, IA e tecnologias imersivas (VR/AR), desenvolvendo soluções estratégicas para empresas como HP e órgãos públicos.',
+  'hero.description': 'Trabalho na interseção entre design, inteligência artificial e tecnologias emergentes, explorando novas formas de criação, prototipagem e inovação aplicada em educação, cultura e organizações.',
   'hero.viewProjects': 'Ver Projetos',
   'hero.contact': 'Entre em Contato',
 
