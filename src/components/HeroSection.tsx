@@ -13,7 +13,7 @@ const SKILLS = [
   "Design de Interação",
 ];
 
-function AnimatedLetter({ char, delay }) {
+function AnimatedLetter({ char, delay }: { char: string; delay: number }) {
   return (
     <span
       style={{
@@ -29,7 +29,7 @@ function AnimatedLetter({ char, delay }) {
   );
 }
 
-function AnimatedWord({ text, baseDelay, className, style }) {
+function AnimatedWord({ text, baseDelay, className, style }: { text: string; baseDelay: number; className: string; style?: React.CSSProperties }) {
   return (
     <span className={className} style={style}>
       {text.split("").map((char, i) => (
@@ -39,7 +39,7 @@ function AnimatedWord({ text, baseDelay, className, style }) {
   );
 }
 
-function GlowDot({ x, y, size, delay, color }) {
+function GlowDot({ x, y, size, delay, color }: { x: number; y: number; size: string; delay: number; color: string }) {
   return (
     <div
       style={{
@@ -61,14 +61,14 @@ function GlowDot({ x, y, size, delay, color }) {
 
 export default function HeroSection() {
   const [mousePos, setMousePos] = useState({ x: 50, y: 50 });
-  const heroRef = useRef(null);
+  const heroRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {}, 100);
     return () => clearTimeout(timer);
   }, []);
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: React.MouseEvent) => {
     if (!heroRef.current) return;
     const rect = heroRef.current.getBoundingClientRect();
     setMousePos({
@@ -82,8 +82,6 @@ export default function HeroSection() {
       <style>{`
         @import url('https://api.fontshare.com/v2/css?f[]=clash-display@600,700&f[]=satoshi@400,500,700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
           --hero-bg: #0a0a0f;
@@ -133,8 +131,6 @@ export default function HeroSection() {
         @media (prefers-reduced-motion: reduce) {
           * { animation-duration: 0.001s !important; }
         }
-
-        body { background: var(--hero-bg); }
 
         .hero-root {
           position: relative;
@@ -602,12 +598,12 @@ export default function HeroSection() {
           </p>
 
           <div className="hero-cta-row">
-            <button className="hero-cta">
+            <button className="hero-cta" onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}>
               Ver projetos
               <span className="hero-cta-arrow">→</span>
             </button>
-            <button className="hero-cta-ghost">
-              Currículo <span>↓</span>
+            <button className="hero-cta-ghost" onClick={() => window.open('https://chatgpt.com/g/g-68654885f5c88191b5d2df8265320cce-guilherme-resende-gpt', '_blank')}>
+              Minha I.A <span>→</span>
             </button>
           </div>
         </div>

@@ -100,8 +100,8 @@ const FILTERS = [
 ];
 
 /* ─── intersection observer hook ─── */
-function useInView(options = {}) {
-  const ref = useRef(null);
+function useInView(options = {}): [React.RefObject<HTMLDivElement>, boolean] {
+  const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
   useEffect(() => {
     const el = ref.current;
@@ -117,12 +117,12 @@ function useInView(options = {}) {
 }
 
 /* ─── single project card ─── */
-function ProjectCard({ project, index, visible }) {
+function ProjectCard({ project, index, visible }: { project: typeof PROJECTS[0]; index: number; visible: boolean }) {
   const [hover, setHover] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const cardRef = useRef(null);
+  const cardRef = useRef<HTMLDivElement>(null);
 
-  const handleMouseMove = useCallback((e) => {
+  const handleMouseMove = useCallback((e: React.MouseEvent) => {
     if (!cardRef.current) return;
     const rect = cardRef.current.getBoundingClientRect();
     setMousePos({
@@ -137,12 +137,11 @@ function ProjectCard({ project, index, visible }) {
     <div
       ref={cardRef}
       className={`pc-card ${isLarge ? "pc-card--large" : ""} ${visible ? "pc-card--visible" : ""}`}
-      style={{ "--delay": `${index * 0.1}s`, "--accent": project.color }}
+      style={{ "--delay": `${index * 0.1}s`, "--accent": project.color } as React.CSSProperties}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => { setHover(false); setMousePos({ x: 0, y: 0 }); }}
       onMouseMove={handleMouseMove}
     >
-      {/* image layer */}
       <div className="pc-card-img-wrap">
         <div
           className="pc-card-img"
@@ -154,17 +153,14 @@ function ProjectCard({ project, index, visible }) {
           }}
         />
         <div className="pc-card-overlay" />
-        {/* neon border on hover */}
         <div className="pc-card-neon" />
       </div>
 
-      {/* top badges */}
       <div className="pc-card-top">
         <span className="pc-card-year">{project.year}</span>
         <span className="pc-card-cat">{project.category}</span>
       </div>
 
-      {/* bottom info — revealed on hover */}
       <div className="pc-card-info">
         <div className="pc-card-tags">
           {project.tags.map((tag) => (
@@ -183,7 +179,6 @@ function ProjectCard({ project, index, visible }) {
         </div>
       </div>
 
-      {/* floating index number */}
       <span className="pc-card-idx">
         {String(project.id).padStart(2, "0")}
       </span>
@@ -218,7 +213,6 @@ export default function ProjectsSection() {
           --pc-dark: #18181f;
         }
 
-        /* ── section ── */
         .pc-section {
           background: var(--pc-bg);
           padding: 120px 48px 80px;
@@ -245,7 +239,6 @@ export default function ProjectsSection() {
           z-index: 2;
         }
 
-        /* ── header ── */
         .pc-header {
           display: flex;
           justify-content: space-between;
@@ -312,7 +305,6 @@ export default function ProjectsSection() {
           font-weight: 500;
         }
 
-        /* ── filters ── */
         .pc-filters {
           display: flex;
           gap: 8px;
@@ -373,7 +365,6 @@ export default function ProjectsSection() {
           z-index: 1;
         }
 
-        /* ── grid ── */
         .pc-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
@@ -389,7 +380,6 @@ export default function ProjectsSection() {
           .pc-header { flex-direction: column; align-items: flex-start; }
         }
 
-        /* ── card ── */
         .pc-card {
           position: relative;
           border-radius: 6px;
@@ -419,7 +409,6 @@ export default function ProjectsSection() {
           transform: translateY(0) scale(1);
         }
 
-        /* image */
         .pc-card-img-wrap {
           position: absolute;
           inset: 0;
@@ -452,7 +441,6 @@ export default function ProjectsSection() {
           opacity: 0.7;
         }
 
-        /* neon border */
         .pc-card-neon {
           position: absolute;
           inset: 0;
@@ -470,7 +458,6 @@ export default function ProjectsSection() {
             0 0 20px color-mix(in srgb, var(--accent) 20%, transparent);
         }
 
-        /* top badges */
         .pc-card-top {
           position: absolute;
           top: 16px;
@@ -514,7 +501,6 @@ export default function ProjectsSection() {
           border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
         }
 
-        /* bottom info */
         .pc-card-info {
           position: absolute;
           bottom: 0;
@@ -635,7 +621,6 @@ export default function ProjectsSection() {
           transform: translate(3px, -3px);
         }
 
-        /* floating index */
         .pc-card-idx {
           position: absolute;
           top: 50%;
@@ -661,7 +646,6 @@ export default function ProjectsSection() {
           font-size: 160px;
         }
 
-        /* ── bottom marquee ── */
         @keyframes projectMarquee {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
@@ -709,9 +693,8 @@ export default function ProjectsSection() {
         }
       `}</style>
 
-      <section className="pc-section">
+      <section id="projects" className="pc-section">
         <div className="pc-inner">
-          {/* header */}
           <div className="pc-header" ref={headerRef}>
             <div className={`pc-header-left ${headerInView ? "vis" : ""}`}>
               <div className="pc-label">
@@ -741,7 +724,6 @@ export default function ProjectsSection() {
             </div>
           </div>
 
-          {/* grid */}
           <div className="pc-grid" ref={sectionRef}>
             {filtered.map((project, i) => (
               <ProjectCard
@@ -753,7 +735,6 @@ export default function ProjectsSection() {
             ))}
           </div>
 
-          {/* bottom marquee */}
           <div className="pc-marquee-wrap">
             <div className="pc-marquee-track">
               {[...Array(3)].map((_, rep) => (
