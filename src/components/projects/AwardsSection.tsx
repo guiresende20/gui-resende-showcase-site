@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -23,27 +22,18 @@ const AwardsSection: React.FC = () => {
 
   return (
     <div className="mt-8">
-      <Card className="border-2 border-amber-200 bg-amber-50">
+      <Card className="border-2 border-amber-800/50 bg-amber-900/10">
         <CardHeader>
-          <CardTitle className="text-2xl font-semibold text-slate-800 flex items-center gap-2">
+          <CardTitle className="text-2xl font-semibold text-foreground flex items-center gap-2">
             🏆 {t('Prêmios e Reconhecimentos')}
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           {awards.map((award, index) => (
-            <div key={index} className="border-l-4 border-amber-400 pl-4">
-              <h4 className="text-lg font-semibold text-slate-800 mb-2">
-                {award.title}
-              </h4>
-              <p className="text-slate-700 mb-3">
-                {award.description}
-              </p>
-              <Button 
-                variant="outline" 
-                size="sm" 
-                className="flex items-center gap-2"
-                onClick={() => window.open(award.link, '_blank')}
-              >
+            <div key={index} className="border-l-4 border-amber-500/50 pl-4">
+              <h4 className="text-lg font-semibold text-foreground mb-2">{award.title}</h4>
+              <p className="text-muted-foreground mb-3">{award.description}</p>
+              <Button variant="outline" size="sm" className="flex items-center gap-2 btn-enhanced" onClick={() => window.open(award.link, '_blank')}>
                 <ExternalLink size={16} />
                 {t('projects.viewProject')}
               </Button>
