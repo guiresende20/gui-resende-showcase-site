@@ -15,41 +15,31 @@ const Experience = () => {
 
   const experiences = [
     {
-      title: t('experience.crialab.title'),
-      company: t('experience.crialab.company'),
-      period: t('experience.crialab.period'),
+      title: t('experience.crialab.title'), company: t('experience.crialab.company'), period: t('experience.crialab.period'),
       location: "Porto Alegre, RS",
       descriptions: [t('experience.crialab.description1'), t('experience.crialab.description2'), t('experience.crialab.description3')],
       type: "current"
     },
     {
-      title: t('experience.ufrgs.title'),
-      company: t('experience.ufrgs.company'),
-      period: t('experience.ufrgs.period'),
+      title: t('experience.ufrgs.title'), company: t('experience.ufrgs.company'), period: t('experience.ufrgs.period'),
       location: "Porto Alegre, RS",
       descriptions: [t('experience.ufrgs.description1'), t('experience.ufrgs.description2'), t('experience.ufrgs.description3')],
       type: "education"
     },
     {
-      title: t('experience.espm.title'),
-      company: t('experience.espm.company'),
-      period: t('experience.espm.period'),
+      title: t('experience.espm.title'), company: t('experience.espm.company'), period: t('experience.espm.period'),
       location: "Porto Alegre, RS",
       descriptions: [t('experience.espm.description1'), t('experience.espm.description2')],
       type: "professional"
     },
     {
-      title: t('experience.bsmotion.title'),
-      company: t('experience.bsmotion.company'),
-      period: t('experience.bsmotion.period'),
+      title: t('experience.bsmotion.title'), company: t('experience.bsmotion.company'), period: t('experience.bsmotion.period'),
       location: "Porto Alegre, RS",
       descriptions: [t('experience.bsmotion.description1'), t('experience.bsmotion.description2'), t('experience.bsmotion.description3')],
       type: "professional"
     },
     {
-      title: t('experience.anglo.title'),
-      company: t('experience.anglo.company'),
-      period: t('experience.anglo.period'),
+      title: t('experience.anglo.title'), company: t('experience.anglo.company'), period: t('experience.anglo.period'),
       location: "Porto Alegre, RS",
       descriptions: [t('experience.anglo.description1'), t('experience.anglo.description2'), t('experience.anglo.description3'), t('experience.anglo.description4')],
       type: "professional",
@@ -60,9 +50,7 @@ const Experience = () => {
       ]
     },
     {
-      title: t('experience.campus.title'),
-      company: t('experience.campus.company'),
-      period: t('experience.campus.period'),
+      title: t('experience.campus.title'), company: t('experience.campus.company'), period: t('experience.campus.period'),
       location: "São Paulo, SP",
       descriptions: [t('experience.campus.description1'), t('experience.campus.description2'), t('experience.campus.description3')],
       type: "professional",
@@ -74,10 +62,10 @@ const Experience = () => {
 
   const getTypeColor = (type: string) => {
     switch (type) {
-      case 'current': return 'bg-green-100 text-green-800 border-green-200';
-      case 'education': return 'bg-blue-100 text-blue-800 border-blue-200';
-      case 'professional': return 'bg-purple-100 text-purple-800 border-purple-200';
-      default: return 'bg-gray-100 text-gray-800 border-gray-200';
+      case 'current': return 'bg-neon-900/30 text-neon border-neon-800/50';
+      case 'education': return 'bg-electric-800/30 text-electric border-electric-700/50';
+      case 'professional': return 'bg-accent text-accent-foreground border-border';
+      default: return 'bg-muted text-muted-foreground border-border';
     }
   };
 
@@ -98,31 +86,31 @@ const Experience = () => {
   const handleImageClick = (imageSrc: string, imageAlt: string) => setModalImage({ src: imageSrc, alt: imageAlt });
 
   return (
-    <section id="experience" className="py-20 bg-gradient-to-b from-white to-slate-50">
+    <section id="experience" className="py-20 bg-background">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={titleRef} className={`text-center mb-16 scroll-reveal ${titleVisible ? 'visible' : ''}`}>
-          <h2 className="text-4xl font-bold text-slate-800 mb-4">{t('experience.title')}</h2>
-          <div className="w-24 h-1 bg-blue-900 mx-auto mb-6"></div>
+          <h2 className="text-4xl font-bold text-foreground mb-4">{t('experience.title')}</h2>
+          <div className="w-24 h-1 bg-primary mx-auto mb-6"></div>
         </div>
 
         <div ref={cardsRef} className="space-y-8">
           {experiences.map((exp, index) => (
             <Card
               key={index}
-              className={`group hover:shadow-xl transition-all duration-300 border-l-4 border-l-blue-900 glass-card gradient-border-hover scroll-reveal ${cardsVisible ? 'visible' : ''}`}
+              className={`group hover:shadow-neon transition-all duration-300 border-l-4 border-l-primary glass-card gradient-border-hover scroll-reveal ${cardsVisible ? 'visible' : ''}`}
               style={getStaggerDelay(index)}
             >
               <CardHeader>
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-2">
-                      <CardTitle className="text-2xl font-bold text-slate-800">{exp.title}</CardTitle>
+                      <CardTitle className="text-2xl font-bold text-foreground">{exp.title}</CardTitle>
                       <span className={`px-3 py-1 text-sm rounded-full font-medium border ${getTypeColor(exp.type)}`}>
                         {exp.type === 'current' ? 'Atual' : exp.type === 'education' ? 'Acadêmico' : 'Profissional'}
                       </span>
                     </div>
-                    <p className="text-xl font-semibold text-blue-900 mb-2">{exp.company}</p>
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-slate-600">
+                    <p className="text-xl font-semibold text-primary mb-2">{exp.company}</p>
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-muted-foreground">
                       <div className="flex items-center gap-1"><Calendar size={16} /><span className="font-medium">{exp.period}</span></div>
                       <div className="flex items-center gap-1"><MapPin size={16} /><span>{exp.location}</span></div>
                     </div>
@@ -133,25 +121,22 @@ const Experience = () => {
                 <ul className="space-y-3">
                   {exp.descriptions.map((desc, descIndex) => (
                     <li key={descIndex} className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-blue-900 rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-slate-700 leading-relaxed">{desc}</span>
+                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                      <span className="text-muted-foreground leading-relaxed">{desc}</span>
                     </li>
                   ))}
                 </ul>
                 {exp.thumbnails && (
                   <div className="mt-6">
-                    <h4 className="text-sm font-semibold text-slate-600 mb-1">Desenvolvimento do novo site do curso:</h4>
-                    <p className="text-xs text-slate-500 mb-3">Clique nas imagens para ampliar.</p>
+                    <h4 className="text-sm font-semibold text-muted-foreground mb-1">Desenvolvimento do novo site do curso:</h4>
+                    <p className="text-xs text-muted-foreground/70 mb-3">Clique nas imagens para ampliar.</p>
                     <div className="flex gap-4 flex-wrap">
                       {exp.thumbnails.map((thumbnail, thumbIndex) => (
-                        <button
-                          key={thumbIndex}
-                          type="button"
-                          className="w-24 h-24 rounded-lg overflow-hidden border border-slate-200 hover:shadow-md transition-shadow cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        <button key={thumbIndex} type="button"
+                          className="w-24 h-24 rounded-lg overflow-hidden border border-border hover:shadow-neon transition-shadow cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary"
                           onClick={() => handleImageClick(thumbnail, `Anglo Vestibulares thumbnail ${thumbIndex + 1}`)}
-                          aria-label={`Ampliar imagem ${thumbIndex + 1} do projeto Anglo Vestibulares`}
-                        >
-                          <img src={thumbnail} alt={`Anglo Vestibulares thumbnail ${thumbIndex + 1}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+                          aria-label={`Ampliar imagem ${thumbIndex + 1}`}>
+                          <img src={thumbnail} alt={`Anglo thumbnail ${thumbIndex + 1}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
                         </button>
                       ))}
                     </div>
@@ -159,7 +144,7 @@ const Experience = () => {
                 )}
                 {exp.videoLink && (
                   <div className="mt-6">
-                    <button onClick={() => handleVideoClick(exp.videoLink)} className="flex items-center gap-2 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors btn-enhanced">
+                    <button onClick={() => handleVideoClick(exp.videoLink!)} className="flex items-center gap-2 px-4 py-2 bg-destructive text-destructive-foreground rounded-lg hover:opacity-90 transition-colors btn-enhanced">
                       <Play size={16} />Vídeo do Evento Campus Party<ExternalLink size={14} />
                     </button>
                   </div>

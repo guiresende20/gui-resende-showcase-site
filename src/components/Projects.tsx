@@ -28,27 +28,20 @@ const Projects = () => {
         return videoId ? `https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1` : url;
       } catch { return url; }
     };
-
-    if (project.iframe) {
-      setModalContent({ title: project.title, iframe: project.iframe });
-      setModalOpen(true);
-    } else if (project.link) {
-      if (isYouTubeUrl(project.link)) {
-        setModalContent({ title: project.title, iframe: toYouTubeEmbed(project.link) });
-        setModalOpen(true);
-      } else {
-        window.open(project.link, '_blank');
-      }
+    if (project.iframe) { setModalContent({ title: project.title, iframe: project.iframe }); setModalOpen(true); }
+    else if (project.link) {
+      if (isYouTubeUrl(project.link)) { setModalContent({ title: project.title, iframe: toYouTubeEmbed(project.link) }); setModalOpen(true); }
+      else window.open(project.link, '_blank');
     }
   };
 
   return (
-    <section id="projects" className="py-20 bg-gradient-to-b from-slate-50 to-blue-50/30">
+    <section className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={titleRef} className={`text-center mb-16 scroll-reveal ${titleVisible ? 'visible' : ''}`}>
-          <h2 className="text-4xl font-bold text-slate-800 mb-4">{t('projects.title')}</h2>
-          <div className="w-24 h-1 bg-blue-900 mx-auto mb-6"></div>
-          <p className="text-lg text-slate-600 max-w-3xl mx-auto">{t('projects.description')}</p>
+          <h2 className="text-4xl font-bold text-foreground mb-4">{t('projects.title')}</h2>
+          <div className="w-24 h-1 bg-primary mx-auto mb-6"></div>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">{t('projects.description')}</p>
         </div>
 
         <div ref={gridRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
